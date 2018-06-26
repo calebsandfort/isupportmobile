@@ -6,13 +6,12 @@ import Login from "./container/LoginContainer";
 import Dashboard from './container/DashboardContainer';
 import BlankPage from "./container/BlankPageContainer";
 import Sidebar from "./container/SidebarContainer";
-import NewIncident from "./container/Incident/Form";
+import IncidentPage from "./container/Incident/Form";
 import WorkItemList from './container/WorkItemListContainer';
 
 const Drawer = DrawerNavigator(
 	{
 		Dashboard: { screen: Dashboard },
-		NewIncident: { screen: NewIncident },
 	},
 	{
 		initialRouteName: "Dashboard",
@@ -22,7 +21,9 @@ const Drawer = DrawerNavigator(
 
 const AppStack = StackNavigator({
 		Drawer: { screen: Drawer },
-		WorkItemList: { screen: WorkItemList }
+		WorkItemList: { screen: WorkItemList },
+		NewIncident: { screen: IncidentPage },
+		ExistingIncident: { screen: IncidentPage },
 	},
 	{
 		headerMode: "none",

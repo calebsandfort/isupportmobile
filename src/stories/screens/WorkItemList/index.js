@@ -33,7 +33,6 @@ export interface State {
 class WorkItemList extends React.Component<Props, State> {
 	constructor(props, context: any) {
     super(props, context);
-
     this.state = {
       dataset: null,
       datasetState: null,

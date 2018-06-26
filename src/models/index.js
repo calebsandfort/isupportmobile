@@ -6,6 +6,7 @@ export { TokenResponse as TokenResponse } from './userManagement';
 
 export { ServiceError as ServiceError } from './common';
 export { CollectionResponse as CollectionResponse } from './common';
+export { GetResponse as GetResponse } from './common';
 export { CountResponse as CountResponse } from './common';
 export { WorkItemTypes as WorkItemTypes } from './common';
 export { LoadSpanType as LoadSpanType } from './common';

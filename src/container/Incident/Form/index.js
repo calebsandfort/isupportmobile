@@ -24,13 +24,20 @@ class IncidentForm extends React.Component<Props, State> {
 
 	constructor(props, context) {
     super(props, context);
-
     this.submit = this.submit.bind(this);
     this.assigneeClick = this.assigneeClick.bind(this);
   }
 
 	componentDidMount() {
-		this.props.incidentSettingsActions.initNew(this.props.userManagement.authInfo.repId, this.props.userManagement.authInfo.access_token);
+		console.log(this.props.navigation);
+		//const id: number = parseInt(this.props.navigation.getParam('id', '0'));
+
+		// if(id > 0){
+		//
+		// }
+		// else{
+		// 	this.props.incidentSettingsActions.initNew(this.props.userManagement.authInfo.repId, this.props.userManagement.authInfo.access_token);
+		// }
 	}
 
 	submit() {
@@ -102,6 +109,6 @@ function bindAction(dispatch) {
 const mapStateToProps = state => ({
 	userManagement: state.userManagement,
 	incidentSettings: state.incidentSettings,
-	initialValues: state.incidentSettings.newIncident
+	initialValues: state.incidentSettings.incident
 });
 export default connect(mapStateToProps, bindAction)(IncidentContainer);

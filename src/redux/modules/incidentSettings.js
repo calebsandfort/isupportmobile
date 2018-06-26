@@ -2,15 +2,16 @@
 import { loop, Cmd } from 'redux-loop';
 import { Incident } from '../../models/Entities';
 import { IncidentStatusPropertyNames } from '../../models/Entities/PropertyNames';
-import { IncidentStatusLoadSpan } from '../../models/Entities/LoadSpans';
+import { IncidentStatusLoadSpan, IncidentLoadSpan } from '../../models/Entities/LoadSpans';
 import { IncidentStatusTypes } from '../../models/Entities/Enums';
 import { IncidentStatusService, IncidentService } from '../../services';
-import { IncidentSettingsState, InitNewIncidentRequest, ServiceError, CollectionResponse, EntityQuery, SearchFilter, SearchFilterCondition } from '../../models';
+import { IncidentSettingsState, InitNewIncidentRequest, GetExistingIncidentRequest,
+  ServiceError, GetResponse, CollectionResponse, EntityQuery, SearchFilter, SearchFilterCondition } from '../../models';
 
 const initialState: IncidentSettingsState = {
   statusesLoaded: false,
   statuses: [],
-  newIncident: {
+  incident: {
     number: ''
   }
 };
@@ -23,6 +24,7 @@ export function init(access_token: string): InitAction {
   return { type: INIT, access_token: access_token };
 }
 
+//**************GetStatuses***************
 const GET_STATUSES = 'iSupport/incidentSettings/GET_STATUSES';
 const GET_STATUSES_SUCCESS = 'iSupport/incidentSettings/GET_STATUSES_SUCCESS';
 const GET_STATUSES_FAIL = 'iSupport/incidentSettings/GET_STATUSES_FAIL';
@@ -43,6 +45,7 @@ export function getStatusesFailed(error: ServiceError): GetStatusesFailAction {
   return { type: GET_STATUSES_FAIL, error: error.message };
 }
 
+//**************InitNew***************
 const INIT_NEW = 'iSupport/incidentSettings/INIT_NEW';
 const INIT_NEW_SUCCESS = 'iSupport/incidentSettings/INIT_NEW_SUCCESS';
 const INIT_NEW_FAIL = 'iSupport/incidentSettings/INIT_NEW_FAIL';
@@ -67,8 +70,35 @@ export function initNewFailed(error: ServiceError): InitNewFailAction {
   return { type: INIT_NEW_FAIL, error: error.message };
 }
 
+//**************GetExisting***************
+const GET_EXISTING = 'iSupport/incidentSettings/GET_EXISTING';
+const GET_EXISTING_SUCCESS = 'iSupport/incidentSettings/GET_EXISTING_SUCCESS';
+const GET_EXISTING_FAIL = 'iSupport/incidentSettings/GET_EXISTING_FAIL';
+
+type GetExistingAction = { type: "iSupport/incidentSettings/GET_EXISTING", request: GetExistingIncidentRequest }
+type GetExistingSuccessAction = { type: "iSupport/incidentSettings/GET_EXISTING_SUCCESS", response: GetResponse }
+type GetExistingFailAction = { type: "iSupport/incidentSettings/GET_EXISTING_FAIL", error: ServiceError };
+
+export function getExisting(id: number, loadSpan: IncidentLoadSpan, access_token: string): GetExistingAction {
+  let request = new GetExistingIncidentRequest();
+  request.id = id;
+  request.loadSpan = loadSpan;
+  request.access_token = access_token;
+
+  return { type: GET_EXISTING, request: request };
+}
+
+export function getExistingSuccess(response: GetResponse): GetExistingSuccessAction {
+  return { type: GET_EXISTING_SUCCESS, response: response };
+}
+
+export function getExistingFailed(error: ServiceError): GetExistingFailAction {
+  return { type: GET_EXISTING_FAIL, error: error.message };
+}
+
 type Action = InitAction | GetStatusesAction | GetStatusesSuccessAction | GetStatusesFailAction
- | InitNewAction | InitNewSuccessAction | InitNewFailAction;
+ | InitNewAction | InitNewSuccessAction | InitNewFailAction
+ | GetExistingAction | GetExistingSuccessAction | GetExistingFailAction;
 
 export default function reducer(state:IncidentSettingsState = initialState, action:Action) : IncidentSettingsState | loop {
   let newState:IncidentSettingsState;
@@ -129,10 +159,27 @@ export default function reducer(state:IncidentSettingsState = initialState, acti
 
     case INIT_NEW_SUCCESS:
       newState = Object.assign({}, state);
-      newState.newIncident = action.response;
+      newState.incident = action.response;
       return newState;
 
     case INIT_NEW_FAIL:
+      return state;
+    case GET_EXISTING:
+      return loop(
+        state,
+        Cmd.run(IncidentService.getExisting, {
+          successActionCreator: initNewSuccess,
+          failActionCreator: initNewFailed,
+          args: [action.request.id, action.request.loadSpan, action.request.access_token]
+        })
+      );
+
+    case GET_EXISTING_SUCCESS:
+      newState = Object.assign({}, state);
+      newState.incident = action.response.item;
+      return newState;
+
+    case GET_EXISTING_FAIL:
       return state;
     default: return state;
   }

@@ -2,7 +2,7 @@
 import qs from 'qs';
 import ServiceBase from './serviceBase';
 import iSupportService from './iSupportService';
-import {CollectionResponse, CountResponse, ServiceError, EntityQuery,
+import {GetResponse, CollectionResponse, CountResponse, ServiceError, EntityQuery,
 //  SearchFilter, SearchFilterCondition
 } from '../models';
 import {Incident} from '../models/Entities';
@@ -10,6 +10,10 @@ import {Incident} from '../models/Entities';
 import {IncidentLoadSpan} from '../models/Entities/LoadSpans';
 
 class IncidentService extends ServiceBase {
+  static executeGet(id: number, loadSpan: ?IncidentLoadSpan, access_token: string): Promise<GetResponse | ServiceError>{
+    return iSupportService.executeGet("incident", id, loadSpan, Incident.fromApiEntity, access_token);
+  }
+
   static executeGetCollection(data: ?any, query: ?EntityQuery, loadSpan: ?IncidentLoadSpan, rep: ?any, access_token: string): Promise<CollectionResponse | ServiceError>{
     return iSupportService.executeGetCollection("incident", data, query, loadSpan, rep, Incident.fromApiEntity, access_token);
   }

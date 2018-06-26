@@ -4,6 +4,7 @@ import ServiceBase from './serviceBase';
 import { LoginInfo,
   AuthInfo,
   ServiceError,
+  GetResponse,
   CollectionResponse,
   CountResponse,
   WorkItemTypes,
@@ -57,6 +58,33 @@ class iSupportService extends ServiceBase {
   //   if (loadSpan) data.loadSpan = loadSpan;
   //   if (rep) data.rep = rep;
   // }
+
+  static executeGet(controller: WorkItemTypes, id: number, loadSpan: ?LoadSpanType, mapFunc: ?(item: any) => mixed, access_token: string): Promise<GetResponse | ServiceError>{
+    let data = {};
+    
+    if (loadSpan) {
+      data.loadSpan = loadSpan;
+    }
+
+    return super.api().get(`/${controller}/${id}?${qs.stringify(data)}`, { headers: { Authorization: `Bearer ${access_token}` } })
+    .then(response => {
+      let result = {
+        item: response.data,
+        controller: controller
+      };
+
+      if (mapFunc){
+        result.item = mapFunc(result.item);
+      }
+
+      return result;
+    })
+    .catch(error => {
+      return {
+        message: error.message
+      };
+    });
+  }
 
   static executeGetCollection(controller: WorkItemTypes, data: ?any, query: ?EntityQuery, loadSpan: ?LoadSpanType, rep: ?any, mapFunc: ?() => mixed, access_token: string): Promise<CollectionResponse | ServiceError>{
     if (!data) {

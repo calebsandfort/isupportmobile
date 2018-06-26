@@ -1820,3 +1820,8 @@ export type CollectionResponse = {
   collection: Array<EntityFlowType>,
   controller: WorkItemTypes
 }
+
+export type GetResponse = {
+  item: EntityFlowType,
+  controller: WorkItemTypes
+}
