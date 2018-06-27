@@ -4,11 +4,14 @@
 ******************************************************************************/
 import IncidentLoadSpan from './IncidentLoadSpan';
 
-export class IncidentWorkflowGroupLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class IncidentWorkflowGroupLoadSpan extends LoadSpanBase {
   workflowGroupGuid: boolean;
   incident: IncidentLoadSpan;
 
   constructor(){
+    super();
     this.workflowGroupGuid = false;
   }
 

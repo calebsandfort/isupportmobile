@@ -16,7 +16,9 @@ import CompanyLoadSpan from './CompanyLoadSpan';
 import EndUserDesktopDefinitionLoadSpan from './EndUserDesktopDefinitionLoadSpan';
 import RuleGroupLoadSpan from './RuleGroupLoadSpan';
 
-export class PurchaseLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class PurchaseLoadSpan extends LoadSpanBase {
   number: boolean;
   createdDate: boolean;
   modifiedDate: boolean;
@@ -56,6 +58,7 @@ export class PurchaseLoadSpan {
   staticEffectiveRuleGroup: RuleGroupLoadSpan;
 
   constructor(){
+    super();
     this.number = false;
     this.createdDate = false;
     this.modifiedDate = false;

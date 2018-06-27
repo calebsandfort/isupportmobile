@@ -3,13 +3,16 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class GlobalConfigurationLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class GlobalConfigurationLoadSpan extends LoadSpanBase {
   techClientURLDatabaseValue: boolean;
   permissionsEnabled: boolean;
   useProblemManagementDatabaseValue: boolean;
   useChangeManagementDatabaseValue: boolean;
 
   constructor(){
+    super();
     this.techClientURLDatabaseValue = false;
     this.permissionsEnabled = false;
     this.useProblemManagementDatabaseValue = false;

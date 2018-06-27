@@ -6,7 +6,9 @@ import CustomerLoadSpan from './CustomerLoadSpan';
 import SupportRepresentativeLoadSpan from './SupportRepresentativeLoadSpan';
 import IncidentCustomerChatSessionLoadSpan from './IncidentCustomerChatSessionLoadSpan';
 
-export class IncidentCustomerChatHistoryLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class IncidentCustomerChatHistoryLoadSpan extends LoadSpanBase {
   createdDate: boolean;
   entry: boolean;
   incidentNumber: boolean;
@@ -17,6 +19,7 @@ export class IncidentCustomerChatHistoryLoadSpan {
   session: IncidentCustomerChatSessionLoadSpan;
 
   constructor(){
+    super();
     this.createdDate = false;
     this.entry = false;
     this.incidentNumber = false;

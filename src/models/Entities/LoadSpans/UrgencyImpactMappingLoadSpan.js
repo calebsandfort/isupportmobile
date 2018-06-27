@@ -5,13 +5,16 @@
 import UrgencyLoadSpan from './UrgencyLoadSpan';
 import ImpactLoadSpan from './ImpactLoadSpan';
 
-export class UrgencyImpactMappingLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class UrgencyImpactMappingLoadSpan extends LoadSpanBase {
   pendingDeletion: boolean;
   priority: boolean;
   urgency: UrgencyLoadSpan;
   impact: ImpactLoadSpan;
 
   constructor(){
+    super();
     this.pendingDeletion = false;
     this.priority = false;
   }

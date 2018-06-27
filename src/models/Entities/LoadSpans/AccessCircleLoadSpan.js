@@ -3,7 +3,9 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class AccessCircleLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class AccessCircleLoadSpan extends LoadSpanBase {
   name: boolean;
   allCustomers: boolean;
   allReps: boolean;
@@ -11,6 +13,7 @@ export class AccessCircleLoadSpan {
   allRepGroups: boolean;
 
   constructor(){
+    super();
     this.name = false;
     this.allCustomers = false;
     this.allReps = false;

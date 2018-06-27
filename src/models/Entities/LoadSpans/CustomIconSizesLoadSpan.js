@@ -4,12 +4,15 @@
 ******************************************************************************/
 import CustomIconLoadSpan from './CustomIconLoadSpan';
 
-export class CustomIconSizesLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class CustomIconSizesLoadSpan extends LoadSpanBase {
   iconData: boolean;
   iconSize: boolean;
   iconID: CustomIconLoadSpan;
 
   constructor(){
+    super();
     this.iconData = false;
     this.iconSize = false;
   }

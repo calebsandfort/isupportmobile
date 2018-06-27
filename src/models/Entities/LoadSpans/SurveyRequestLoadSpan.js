@@ -5,7 +5,9 @@
 import SurveyLoadSpan from './SurveyLoadSpan';
 import CustomerLoadSpan from './CustomerLoadSpan';
 
-export class SurveyRequestLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class SurveyRequestLoadSpan extends LoadSpanBase {
   guid: boolean;
   incidentNumber: boolean;
   dateSent: boolean;
@@ -16,6 +18,7 @@ export class SurveyRequestLoadSpan {
   recipient: CustomerLoadSpan;
 
   constructor(){
+    super();
     this.guid = false;
     this.incidentNumber = false;
     this.dateSent = false;

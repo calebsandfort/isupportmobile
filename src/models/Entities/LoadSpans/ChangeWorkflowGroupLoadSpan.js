@@ -4,11 +4,14 @@
 ******************************************************************************/
 import ChangeLoadSpan from './ChangeLoadSpan';
 
-export class ChangeWorkflowGroupLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ChangeWorkflowGroupLoadSpan extends LoadSpanBase {
   workflowGroupGuid: boolean;
   change: ChangeLoadSpan;
 
   constructor(){
+    super();
     this.workflowGroupGuid = false;
   }
 

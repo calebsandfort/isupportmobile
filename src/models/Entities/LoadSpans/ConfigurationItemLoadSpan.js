@@ -7,7 +7,9 @@ import CustomerLoadSpan from './CustomerLoadSpan';
 import SupportRepresentativeLoadSpan from './SupportRepresentativeLoadSpan';
 import AssetLoadSpan from './AssetLoadSpan';
 
-export class ConfigurationItemLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ConfigurationItemLoadSpan extends LoadSpanBase {
   name: boolean;
   description: boolean;
   type: ConfigurationItemTypeLoadSpan;
@@ -16,6 +18,7 @@ export class ConfigurationItemLoadSpan {
   associatedAsset: AssetLoadSpan;
 
   constructor(){
+    super();
     this.name = false;
     this.description = false;
   }

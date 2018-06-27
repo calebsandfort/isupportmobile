@@ -5,7 +5,9 @@
 import QueryLoadSpan from './QueryLoadSpan';
 import AccessCircleLoadSpan from './AccessCircleLoadSpan';
 
-export class QueryChartLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class QueryChartLoadSpan extends LoadSpanBase {
   title: boolean;
   maxGaugeValue: boolean;
   chartType: boolean;
@@ -19,6 +21,7 @@ export class QueryChartLoadSpan {
   accessCircle: AccessCircleLoadSpan;
 
   constructor(){
+    super();
     this.title = false;
     this.maxGaugeValue = false;
     this.chartType = false;

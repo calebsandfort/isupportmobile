@@ -7,7 +7,9 @@ import PurchaseTemplateLoadSpan from './PurchaseTemplateLoadSpan';
 import ServiceCatalogLoadSpan from './ServiceCatalogLoadSpan';
 import ConfigurationItemLoadSpan from './ConfigurationItemLoadSpan';
 
-export class ServiceCatalogEntryLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ServiceCatalogEntryLoadSpan extends LoadSpanBase {
   name: boolean;
   required: boolean;
   isRadioButton: boolean;
@@ -27,6 +29,7 @@ export class ServiceCatalogEntryLoadSpan {
   configurationItem: ConfigurationItemLoadSpan;
 
   constructor(){
+    super();
     this.name = false;
     this.required = false;
     this.isRadioButton = false;

@@ -10,7 +10,9 @@ import GroupLoadSpan from './GroupLoadSpan';
 import CategoryLoadSpan from './CategoryLoadSpan';
 import ChangeLayoutLoadSpan from './ChangeLayoutLoadSpan';
 
-export class ChangeTemplateLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ChangeTemplateLoadSpan extends LoadSpanBase {
   name: boolean;
   reason: boolean;
   description: boolean;
@@ -35,6 +37,7 @@ export class ChangeTemplateLoadSpan {
   mySupportSubmitChangeLayout: ChangeLayoutLoadSpan;
 
   constructor(){
+    super();
     this.name = false;
     this.reason = false;
     this.description = false;

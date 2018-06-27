@@ -4,11 +4,14 @@
 ******************************************************************************/
 import NewsFeedOptionsLoadSpan from './NewsFeedOptionsLoadSpan';
 
-export class EntityFollowProfileLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class EntityFollowProfileLoadSpan extends LoadSpanBase {
   entityType: boolean;
   newsFeedOptions: NewsFeedOptionsLoadSpan;
 
   constructor(){
+    super();
     this.entityType = false;
   }
 

@@ -21,7 +21,7 @@ class IncidentFormScreen extends React.Component<Props, State> {
 					</Left>
 
 					<Body style={{ flex: 3 }}>
-						<Title>{param ? param.name.item : "Incident"}</Title>
+						<Title>Incident</Title>
 					</Body>
 
 					<Right />

@@ -4,7 +4,9 @@
 ******************************************************************************/
 import CustomFieldDefinitionLoadSpan from './CustomFieldDefinitionLoadSpan';
 
-export class CustomFieldDependencyLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class CustomFieldDependencyLoadSpan extends LoadSpanBase {
   dependencyValue: boolean;
   matchType: boolean;
   conditionDefinition: CustomFieldDefinitionLoadSpan;
@@ -12,6 +14,7 @@ export class CustomFieldDependencyLoadSpan {
   parent: CustomFieldDependencyLoadSpan;
 
   constructor(){
+    super();
     this.dependencyValue = false;
     this.matchType = false;
   }

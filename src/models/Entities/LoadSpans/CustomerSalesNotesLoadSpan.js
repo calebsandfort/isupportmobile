@@ -4,7 +4,9 @@
 ******************************************************************************/
 import SupportRepresentativeLoadSpan from './SupportRepresentativeLoadSpan';
 
-export class CustomerSalesNotesLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class CustomerSalesNotesLoadSpan extends LoadSpanBase {
   createdDate: boolean;
   entry: boolean;
   customerGuid: boolean;
@@ -12,6 +14,7 @@ export class CustomerSalesNotesLoadSpan {
   owner: SupportRepresentativeLoadSpan;
 
   constructor(){
+    super();
     this.createdDate = false;
     this.entry = false;
     this.customerGuid = false;

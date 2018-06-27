@@ -3,7 +3,9 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class CategoryLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class CategoryLoadSpan extends LoadSpanBase {
   entry: boolean;
   level: boolean;
   hasChildren: boolean;
@@ -12,6 +14,7 @@ export class CategoryLoadSpan {
   parent: CategoryLoadSpan;
 
   constructor(){
+    super();
     this.entry = false;
     this.level = false;
     this.hasChildren = false;

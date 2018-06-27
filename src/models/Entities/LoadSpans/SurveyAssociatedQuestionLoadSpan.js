@@ -4,12 +4,15 @@
 ******************************************************************************/
 import SurveyQuestionLoadSpan from './SurveyQuestionLoadSpan';
 
-export class SurveyAssociatedQuestionLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class SurveyAssociatedQuestionLoadSpan extends LoadSpanBase {
   position: boolean;
   page: boolean;
   question: SurveyQuestionLoadSpan;
 
   constructor(){
+    super();
     this.position = false;
     this.page = false;
   }

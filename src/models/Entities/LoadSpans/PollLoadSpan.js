@@ -3,10 +3,13 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class PollLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class PollLoadSpan extends LoadSpanBase {
   dummy: boolean;
 
   constructor(){
+    super();
     this.dummy = false;
   }
 

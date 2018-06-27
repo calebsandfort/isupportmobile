@@ -4,7 +4,9 @@
 ******************************************************************************/
 import AssetTypeLoadSpan from './AssetTypeLoadSpan';
 
-export class ProductLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ProductLoadSpan extends LoadSpanBase {
   name: boolean;
   description: boolean;
   availableToEUD: boolean;
@@ -12,6 +14,7 @@ export class ProductLoadSpan {
   assetType: AssetTypeLoadSpan;
 
   constructor(){
+    super();
     this.name = false;
     this.description = false;
     this.availableToEUD = false;

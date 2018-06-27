@@ -9,7 +9,9 @@ import ChangeLoadSpan from './ChangeLoadSpan';
 import KnowledgeEntryLoadSpan from './KnowledgeEntryLoadSpan';
 import AssetLoadSpan from './AssetLoadSpan';
 
-export class SupportRepresentativeCheckInLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class SupportRepresentativeCheckInLoadSpan extends LoadSpanBase {
   createdDate: boolean;
   latitude: boolean;
   longitude: boolean;
@@ -21,6 +23,7 @@ export class SupportRepresentativeCheckInLoadSpan {
   asset: AssetLoadSpan;
 
   constructor(){
+    super();
     this.createdDate = false;
     this.latitude = false;
     this.longitude = false;

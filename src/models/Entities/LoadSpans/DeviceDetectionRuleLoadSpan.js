@@ -3,7 +3,9 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class DeviceDetectionRuleLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class DeviceDetectionRuleLoadSpan extends LoadSpanBase {
   displayName: boolean;
   pattern: boolean;
   exactMatch: boolean;
@@ -11,6 +13,7 @@ export class DeviceDetectionRuleLoadSpan {
   parent: DeviceDetectionRuleLoadSpan;
 
   constructor(){
+    super();
     this.displayName = false;
     this.pattern = false;
     this.exactMatch = false;

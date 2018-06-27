@@ -3,11 +3,14 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class CostCenterLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class CostCenterLoadSpan extends LoadSpanBase {
   name: boolean;
   customFieldCollectionIdentifier: boolean;
 
   constructor(){
+    super();
     this.name = false;
     this.customFieldCollectionIdentifier = false;
   }

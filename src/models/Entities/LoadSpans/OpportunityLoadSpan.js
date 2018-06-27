@@ -10,7 +10,9 @@ import OpportunityStageLoadSpan from './OpportunityStageLoadSpan';
 import OpportunityTypeLoadSpan from './OpportunityTypeLoadSpan';
 import OpportunityTermLoadSpan from './OpportunityTermLoadSpan';
 
-export class OpportunityLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class OpportunityLoadSpan extends LoadSpanBase {
   number: boolean;
   guid: boolean;
   createdDate: boolean;
@@ -37,6 +39,7 @@ export class OpportunityLoadSpan {
   modifiedBy: SupportRepresentativeLoadSpan;
 
   constructor(){
+    super();
     this.number = false;
     this.guid = false;
     this.createdDate = false;

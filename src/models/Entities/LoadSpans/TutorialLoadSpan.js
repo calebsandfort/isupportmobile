@@ -3,11 +3,14 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class TutorialLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class TutorialLoadSpan extends LoadSpanBase {
   name: boolean;
   menuId: boolean;
 
   constructor(){
+    super();
     this.name = false;
     this.menuId = false;
   }

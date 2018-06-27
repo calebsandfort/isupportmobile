@@ -4,12 +4,15 @@
 ******************************************************************************/
 import SupportRepresentativeLoadSpan from './SupportRepresentativeLoadSpan';
 
-export class ServiceContractCorrespondenceHistoryLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ServiceContractCorrespondenceHistoryLoadSpan extends LoadSpanBase {
   createdDate: boolean;
   entry: boolean;
   owner: SupportRepresentativeLoadSpan;
 
   constructor(){
+    super();
     this.createdDate = false;
     this.entry = false;
   }

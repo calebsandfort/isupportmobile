@@ -167,9 +167,9 @@ export default function reducer(state:IncidentSettingsState = initialState, acti
     case GET_EXISTING:
       return loop(
         state,
-        Cmd.run(IncidentService.getExisting, {
-          successActionCreator: initNewSuccess,
-          failActionCreator: initNewFailed,
+        Cmd.run(IncidentService.executeGet, {
+          successActionCreator: getExistingSuccess,
+          failActionCreator: getExistingFailed,
           args: [action.request.id, action.request.loadSpan, action.request.access_token]
         })
       );

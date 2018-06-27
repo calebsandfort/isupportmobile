@@ -6,7 +6,9 @@ import SupportRepresentativeLoadSpan from './SupportRepresentativeLoadSpan';
 import GroupLoadSpan from './GroupLoadSpan';
 import WorkHistoryTypeLoadSpan from './WorkHistoryTypeLoadSpan';
 
-export class ProblemWorkHistoryLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ProblemWorkHistoryLoadSpan extends LoadSpanBase {
   createdDate: boolean;
   entry: boolean;
   problemNumber: boolean;
@@ -18,6 +20,7 @@ export class ProblemWorkHistoryLoadSpan {
   workHistoryType: WorkHistoryTypeLoadSpan;
 
   constructor(){
+    super();
     this.createdDate = false;
     this.entry = false;
     this.problemNumber = false;

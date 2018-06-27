@@ -3,7 +3,9 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class AssetTypeLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class AssetTypeLoadSpan extends LoadSpanBase {
   type: boolean;
   isPcAsset: boolean;
   customFieldCollectionID: boolean;
@@ -16,6 +18,7 @@ export class AssetTypeLoadSpan {
   optionalFields: boolean;
 
   constructor(){
+    super();
     this.type = false;
     this.isPcAsset = false;
     this.customFieldCollectionID = false;

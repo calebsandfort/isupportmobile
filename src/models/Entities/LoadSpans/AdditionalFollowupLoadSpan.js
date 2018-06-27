@@ -5,13 +5,16 @@
 import SupportRepresentativeLoadSpan from './SupportRepresentativeLoadSpan';
 import CustomerLoadSpan from './CustomerLoadSpan';
 
-export class AdditionalFollowupLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class AdditionalFollowupLoadSpan extends LoadSpanBase {
   date: boolean;
   note: boolean;
   rep: SupportRepresentativeLoadSpan;
   customer: CustomerLoadSpan;
 
   constructor(){
+    super();
     this.date = false;
     this.note = false;
   }

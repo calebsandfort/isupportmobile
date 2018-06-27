@@ -61,12 +61,13 @@ class iSupportService extends ServiceBase {
 
   static executeGet(controller: WorkItemTypes, id: number, loadSpan: ?LoadSpanType, mapFunc: ?(item: any) => mixed, access_token: string): Promise<GetResponse | ServiceError>{
     let data = {};
-    
+    data.identifier = id;
+
     if (loadSpan) {
       data.loadSpan = loadSpan;
     }
 
-    return super.api().get(`/${controller}/${id}?${qs.stringify(data)}`, { headers: { Authorization: `Bearer ${access_token}` } })
+    return super.api().get(`/${controller}/find?${qs.stringify(data)}`, { headers: { Authorization: `Bearer ${access_token}` } })
     .then(response => {
       let result = {
         item: response.data,

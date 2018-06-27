@@ -4,13 +4,16 @@
 ******************************************************************************/
 import ArchivedChangeLoadSpan from './ArchivedChangeLoadSpan';
 
-export class ArchivedChangeAttachmentLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ArchivedChangeAttachmentLoadSpan extends LoadSpanBase {
   fileName: boolean;
   fileData: boolean;
   fileType: boolean;
   change: ArchivedChangeLoadSpan;
 
   constructor(){
+    super();
     this.fileName = false;
     this.fileData = false;
     this.fileType = false;

@@ -4,11 +4,14 @@
 ******************************************************************************/
 import PollLoadSpan from './PollLoadSpan';
 
-export class PollAnswerLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class PollAnswerLoadSpan extends LoadSpanBase {
   answer: boolean;
   poll: PollLoadSpan;
 
   constructor(){
+    super();
     this.answer = false;
   }
 

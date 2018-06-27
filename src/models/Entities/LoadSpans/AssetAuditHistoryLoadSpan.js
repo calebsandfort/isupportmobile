@@ -5,13 +5,16 @@
 import SupportRepresentativeLoadSpan from './SupportRepresentativeLoadSpan';
 import AssetLoadSpan from './AssetLoadSpan';
 
-export class AssetAuditHistoryLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class AssetAuditHistoryLoadSpan extends LoadSpanBase {
   createdDate: boolean;
   entry: boolean;
   owner: SupportRepresentativeLoadSpan;
   asset: AssetLoadSpan;
 
   constructor(){
+    super();
     this.createdDate = false;
     this.entry = false;
   }

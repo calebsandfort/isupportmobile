@@ -4,7 +4,9 @@
 ******************************************************************************/
 import ServiceContractStatusLoadSpan from './ServiceContractStatusLoadSpan';
 
-export class ServiceContractLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ServiceContractLoadSpan extends LoadSpanBase {
   guid: boolean;
   number: boolean;
   customNumber: boolean;
@@ -20,6 +22,7 @@ export class ServiceContractLoadSpan {
   status: ServiceContractStatusLoadSpan;
 
   constructor(){
+    super();
     this.guid = false;
     this.number = false;
     this.customNumber = false;

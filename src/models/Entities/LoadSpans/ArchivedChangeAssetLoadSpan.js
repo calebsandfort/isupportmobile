@@ -4,7 +4,9 @@
 ******************************************************************************/
 import ArchivedChangeLoadSpan from './ArchivedChangeLoadSpan';
 
-export class ArchivedChangeAssetLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ArchivedChangeAssetLoadSpan extends LoadSpanBase {
   tagNumber: boolean;
   type: boolean;
   location: boolean;
@@ -13,6 +15,7 @@ export class ArchivedChangeAssetLoadSpan {
   change: ArchivedChangeLoadSpan;
 
   constructor(){
+    super();
     this.tagNumber = false;
     this.type = false;
     this.location = false;

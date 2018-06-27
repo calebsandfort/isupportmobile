@@ -4,12 +4,15 @@
 ******************************************************************************/
 import TutorialLoadSpan from './TutorialLoadSpan';
 
-export class CustomerLayoutLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class CustomerLayoutLoadSpan extends LoadSpanBase {
   detailsLayout: boolean;
   tabLayout: boolean;
   tutorial: TutorialLoadSpan;
 
   constructor(){
+    super();
     this.detailsLayout = false;
     this.tabLayout = false;
   }

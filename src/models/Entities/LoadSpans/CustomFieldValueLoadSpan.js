@@ -4,11 +4,14 @@
 ******************************************************************************/
 import CustomFieldDefinitionLoadSpan from './CustomFieldDefinitionLoadSpan';
 
-export class CustomFieldValueLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class CustomFieldValueLoadSpan extends LoadSpanBase {
   value: boolean;
   definition: CustomFieldDefinitionLoadSpan;
 
   constructor(){
+    super();
     this.value = false;
   }
 

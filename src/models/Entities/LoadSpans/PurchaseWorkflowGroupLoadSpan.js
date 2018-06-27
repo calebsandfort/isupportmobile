@@ -4,11 +4,14 @@
 ******************************************************************************/
 import PurchaseLoadSpan from './PurchaseLoadSpan';
 
-export class PurchaseWorkflowGroupLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class PurchaseWorkflowGroupLoadSpan extends LoadSpanBase {
   workflowGroupGuid: boolean;
   purchase: PurchaseLoadSpan;
 
   constructor(){
+    super();
     this.workflowGroupGuid = false;
   }
 

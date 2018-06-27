@@ -5,11 +5,14 @@
 import KnowledgeEntryLoadSpan from './KnowledgeEntryLoadSpan';
 import CustomerLoadSpan from './CustomerLoadSpan';
 
-export class KnowledgeEntryLikeEntryLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class KnowledgeEntryLikeEntryLoadSpan extends LoadSpanBase {
   knowledgeEntry: KnowledgeEntryLoadSpan;
   customer: CustomerLoadSpan;
 
   constructor(){
+    super();
   }
 
   get knowledgeEntryLoadSpan(): KnowledgeEntryLoadSpan {

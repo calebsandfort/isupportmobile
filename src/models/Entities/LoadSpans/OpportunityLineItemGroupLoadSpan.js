@@ -3,11 +3,14 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class OpportunityLineItemGroupLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class OpportunityLineItemGroupLoadSpan extends LoadSpanBase {
   name: boolean;
   position: boolean;
 
   constructor(){
+    super();
     this.name = false;
     this.position = false;
   }

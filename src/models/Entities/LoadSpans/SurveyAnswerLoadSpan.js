@@ -6,7 +6,9 @@ import SurveyLoadSpan from './SurveyLoadSpan';
 import SurveyQuestionLoadSpan from './SurveyQuestionLoadSpan';
 import SurveyRequestLoadSpan from './SurveyRequestLoadSpan';
 
-export class SurveyAnswerLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class SurveyAnswerLoadSpan extends LoadSpanBase {
   response: boolean;
   dateSubmitted: boolean;
   survey: SurveyLoadSpan;
@@ -14,6 +16,7 @@ export class SurveyAnswerLoadSpan {
   request: SurveyRequestLoadSpan;
 
   constructor(){
+    super();
     this.response = false;
     this.dateSubmitted = false;
   }

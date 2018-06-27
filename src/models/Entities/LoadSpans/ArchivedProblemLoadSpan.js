@@ -3,7 +3,9 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class ArchivedProblemLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ArchivedProblemLoadSpan extends LoadSpanBase {
   customNumber: boolean;
   number: boolean;
   priority: boolean;
@@ -43,6 +45,7 @@ export class ArchivedProblemLoadSpan {
   repChatHistory: boolean;
 
   constructor(){
+    super();
     this.customNumber = false;
     this.number = false;
     this.priority = false;

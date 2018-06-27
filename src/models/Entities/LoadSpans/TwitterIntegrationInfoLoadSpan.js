@@ -3,7 +3,9 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class TwitterIntegrationInfoLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class TwitterIntegrationInfoLoadSpan extends LoadSpanBase {
   availableToRepDesktop: boolean;
   screenName: boolean;
   consumerKey: boolean;
@@ -12,6 +14,7 @@ export class TwitterIntegrationInfoLoadSpan {
   accessTokenSecret: boolean;
 
   constructor(){
+    super();
     this.availableToRepDesktop = false;
     this.screenName = false;
     this.consumerKey = false;

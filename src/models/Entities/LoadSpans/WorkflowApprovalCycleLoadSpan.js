@@ -4,12 +4,15 @@
 ******************************************************************************/
 import ApprovalCycleLoadSpan from './ApprovalCycleLoadSpan';
 
-export class WorkflowApprovalCycleLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class WorkflowApprovalCycleLoadSpan extends LoadSpanBase {
   workflowGroupGuid: boolean;
   status: boolean;
   approvalCycle: ApprovalCycleLoadSpan;
 
   constructor(){
+    super();
     this.workflowGroupGuid = false;
     this.status = false;
   }

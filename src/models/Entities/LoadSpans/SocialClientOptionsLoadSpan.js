@@ -28,7 +28,9 @@ import QueryChartLoadSpan from './QueryChartLoadSpan';
 import CustomerLayoutLoadSpan from './CustomerLayoutLoadSpan';
 import MySupportFeedLoadSpan from './MySupportFeedLoadSpan';
 
-export class SocialClientOptionsLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class SocialClientOptionsLoadSpan extends LoadSpanBase {
   name: boolean;
   customerDisplayRegistrationLink: boolean;
   defaultRegisterTitle: boolean;
@@ -243,6 +245,7 @@ export class SocialClientOptionsLoadSpan {
   headlineFeed: MySupportFeedLoadSpan;
 
   constructor(){
+    super();
     this.name = false;
     this.customerDisplayRegistrationLink = false;
     this.defaultRegisterTitle = false;

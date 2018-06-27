@@ -4,7 +4,9 @@
 ******************************************************************************/
 import ArchivedIncidentLoadSpan from './ArchivedIncidentLoadSpan';
 
-export class ArchivedCorrespondenceLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ArchivedCorrespondenceLoadSpan extends LoadSpanBase {
   oldEmailId: boolean;
   dateMessage: boolean;
   subject: boolean;
@@ -15,6 +17,7 @@ export class ArchivedCorrespondenceLoadSpan {
   incident: ArchivedIncidentLoadSpan;
 
   constructor(){
+    super();
     this.oldEmailId = false;
     this.dateMessage = false;
     this.subject = false;

@@ -4,7 +4,9 @@
 ******************************************************************************/
 import ArchivedProblemLoadSpan from './ArchivedProblemLoadSpan';
 
-export class ArchivedProblemCorrespondenceLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ArchivedProblemCorrespondenceLoadSpan extends LoadSpanBase {
   dateMessage: boolean;
   subject: boolean;
   priority: boolean;
@@ -14,6 +16,7 @@ export class ArchivedProblemCorrespondenceLoadSpan {
   problem: ArchivedProblemLoadSpan;
 
   constructor(){
+    super();
     this.dateMessage = false;
     this.subject = false;
     this.priority = false;

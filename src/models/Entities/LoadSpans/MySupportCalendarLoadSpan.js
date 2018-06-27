@@ -6,7 +6,9 @@ import SupportRepresentativeLoadSpan from './SupportRepresentativeLoadSpan';
 import CustomerLoadSpan from './CustomerLoadSpan';
 import AccessCircleLoadSpan from './AccessCircleLoadSpan';
 
-export class MySupportCalendarLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class MySupportCalendarLoadSpan extends LoadSpanBase {
   name: boolean;
   repOwner: SupportRepresentativeLoadSpan;
   customerOwner: CustomerLoadSpan;
@@ -14,6 +16,7 @@ export class MySupportCalendarLoadSpan {
   editAccessCircle: AccessCircleLoadSpan;
 
   constructor(){
+    super();
     this.name = false;
   }
 

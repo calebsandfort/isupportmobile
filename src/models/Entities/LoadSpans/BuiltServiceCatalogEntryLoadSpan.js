@@ -10,7 +10,9 @@ import ChangeTemplateLoadSpan from './ChangeTemplateLoadSpan';
 import PurchaseTemplateLoadSpan from './PurchaseTemplateLoadSpan';
 import ServiceCatalogEntryLoadSpan from './ServiceCatalogEntryLoadSpan';
 
-export class BuiltServiceCatalogEntryLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class BuiltServiceCatalogEntryLoadSpan extends LoadSpanBase {
   name: boolean;
   associatedCost: boolean;
   isPlaceHolder: boolean;
@@ -26,6 +28,7 @@ export class BuiltServiceCatalogEntryLoadSpan {
   serviceCatalogEntry: ServiceCatalogEntryLoadSpan;
 
   constructor(){
+    super();
     this.name = false;
     this.associatedCost = false;
     this.isPlaceHolder = false;

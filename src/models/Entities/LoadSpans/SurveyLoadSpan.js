@@ -3,7 +3,9 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class SurveyLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class SurveyLoadSpan extends LoadSpanBase {
   title: boolean;
   expirationMessage: boolean;
   active: boolean;
@@ -21,6 +23,7 @@ export class SurveyLoadSpan {
   showTitle: boolean;
 
   constructor(){
+    super();
     this.title = false;
     this.expirationMessage = false;
     this.active = false;

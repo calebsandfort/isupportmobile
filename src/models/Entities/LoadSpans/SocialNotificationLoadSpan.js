@@ -5,13 +5,16 @@
 import CustomerLoadSpan from './CustomerLoadSpan';
 import SocialClientOptionsLoadSpan from './SocialClientOptionsLoadSpan';
 
-export class SocialNotificationLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class SocialNotificationLoadSpan extends LoadSpanBase {
   number: boolean;
   customerNotificationTypes: boolean;
   customer: CustomerLoadSpan;
   socialClientOptions: SocialClientOptionsLoadSpan;
 
   constructor(){
+    super();
     this.number = false;
     this.customerNotificationTypes = false;
   }

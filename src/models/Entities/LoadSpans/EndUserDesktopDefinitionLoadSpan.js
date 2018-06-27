@@ -6,7 +6,9 @@ import SocialClientOptionsLoadSpan from './SocialClientOptionsLoadSpan';
 import IncidentTemplateLoadSpan from './IncidentTemplateLoadSpan';
 import MySupportFeedLoadSpan from './MySupportFeedLoadSpan';
 
-export class EndUserDesktopDefinitionLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class EndUserDesktopDefinitionLoadSpan extends LoadSpanBase {
   name: boolean;
   url: boolean;
   defaultAuthenticationTitle: boolean;
@@ -38,6 +40,7 @@ export class EndUserDesktopDefinitionLoadSpan {
   knowledgeEntryFeed: MySupportFeedLoadSpan;
 
   constructor(){
+    super();
     this.name = false;
     this.url = false;
     this.defaultAuthenticationTitle = false;

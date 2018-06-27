@@ -3,7 +3,9 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class MobileSettingsLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class MobileSettingsLoadSpan extends LoadSpanBase {
   displayAvatars: boolean;
   checkInOnLogin: boolean;
   assetSummaryLayout: boolean;
@@ -25,6 +27,7 @@ export class MobileSettingsLoadSpan {
   modifiedDate: boolean;
 
   constructor(){
+    super();
     this.displayAvatars = false;
     this.checkInOnLogin = false;
     this.assetSummaryLayout = false;

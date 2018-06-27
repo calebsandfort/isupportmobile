@@ -6,13 +6,16 @@ import PollAnswerLoadSpan from './PollAnswerLoadSpan';
 import CustomerLoadSpan from './CustomerLoadSpan';
 import SupportRepresentativeLoadSpan from './SupportRepresentativeLoadSpan';
 
-export class PollVoteLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class PollVoteLoadSpan extends LoadSpanBase {
   date: boolean;
   answer: PollAnswerLoadSpan;
   customer: CustomerLoadSpan;
   rep: SupportRepresentativeLoadSpan;
 
   constructor(){
+    super();
     this.date = false;
   }
 

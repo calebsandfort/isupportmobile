@@ -3,10 +3,13 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class DiscussionFeedIconLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class DiscussionFeedIconLoadSpan extends LoadSpanBase {
   iconData: boolean;
 
   constructor(){
+    super();
     this.iconData = false;
   }
 

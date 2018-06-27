@@ -3,7 +3,9 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class ArchivedPurchaseLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ArchivedPurchaseLoadSpan extends LoadSpanBase {
   customNumber: boolean;
   number: boolean;
   status: boolean;
@@ -43,6 +45,7 @@ export class ArchivedPurchaseLoadSpan {
   ruleGroupHistory: boolean;
 
   constructor(){
+    super();
     this.customNumber = false;
     this.number = false;
     this.status = false;

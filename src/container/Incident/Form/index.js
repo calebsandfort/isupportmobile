@@ -8,6 +8,7 @@ import { Field, reduxForm, formValueSelector } from "redux-form";
 import * as incidentSettingsActions from "../../../redux/modules/incidentSettings";
 import IncidentFormScreen from '../../../stories/screens/Incident/Form';
 import {UserManagementState, IncidentSettingsState} from '../../../models';
+import {IncidentLoadSpan} from '../../../models/Entities/LoadSpans';
 
 export interface Props {
 	navigation: any,
@@ -29,15 +30,20 @@ class IncidentForm extends React.Component<Props, State> {
   }
 
 	componentDidMount() {
-		console.log(this.props.navigation);
-		//const id: number = parseInt(this.props.navigation.getParam('id', '0'));
-
-		// if(id > 0){
-		//
-		// }
-		// else{
-		// 	this.props.incidentSettingsActions.initNew(this.props.userManagement.authInfo.repId, this.props.userManagement.authInfo.access_token);
-		// }
+		const id: number = parseInt(this.props.navigation.getParam('id', '0'));
+		if(id > 0){
+			const loadSpan:IncidentLoadSpan = new IncidentLoadSpan();
+			loadSpan.number = true;
+			loadSpan.createdDate = true;
+			loadSpan.priority = true;
+			loadSpan.assigneeLoadSpan.firstName = true;
+			loadSpan.assigneeLoadSpan.lastName = true;
+			loadSpan.statusLoadSpan.id = true;
+			this.props.incidentSettingsActions.getExisting(id, loadSpan, this.props.userManagement.authInfo.access_token);
+		}
+		else{
+			this.props.incidentSettingsActions.initNew(this.props.userManagement.authInfo.repId, this.props.userManagement.authInfo.access_token);
+		}
 	}
 
 	submit() {

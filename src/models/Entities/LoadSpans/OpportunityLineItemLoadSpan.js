@@ -4,7 +4,9 @@
 ******************************************************************************/
 import OpportunityLineItemGroupLoadSpan from './OpportunityLineItemGroupLoadSpan';
 
-export class OpportunityLineItemLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class OpportunityLineItemLoadSpan extends LoadSpanBase {
   quickBooksIdentifier: boolean;
   quickBooksDomain: boolean;
   name: boolean;
@@ -16,6 +18,7 @@ export class OpportunityLineItemLoadSpan {
   baseOpportunityLineItem: OpportunityLineItemLoadSpan;
 
   constructor(){
+    super();
     this.quickBooksIdentifier = false;
     this.quickBooksDomain = false;
     this.name = false;

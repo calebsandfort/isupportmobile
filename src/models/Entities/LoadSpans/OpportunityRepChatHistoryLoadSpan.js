@@ -4,7 +4,9 @@
 ******************************************************************************/
 import SupportRepresentativeLoadSpan from './SupportRepresentativeLoadSpan';
 
-export class OpportunityRepChatHistoryLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class OpportunityRepChatHistoryLoadSpan extends LoadSpanBase {
   createdDate: boolean;
   entry: boolean;
   isFromSystem: boolean;
@@ -12,6 +14,7 @@ export class OpportunityRepChatHistoryLoadSpan {
   recipient: SupportRepresentativeLoadSpan;
 
   constructor(){
+    super();
     this.createdDate = false;
     this.entry = false;
     this.isFromSystem = false;

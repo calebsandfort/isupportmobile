@@ -3,13 +3,16 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class IncidentTemplateAttachmentLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class IncidentTemplateAttachmentLoadSpan extends LoadSpanBase {
   fileName: boolean;
   fileType: boolean;
   fileSize: boolean;
   fileData: boolean;
 
   constructor(){
+    super();
     this.fileName = false;
     this.fileType = false;
     this.fileSize = false;

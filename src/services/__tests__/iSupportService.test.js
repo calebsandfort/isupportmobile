@@ -4,6 +4,7 @@ import iSupportService from '../iSupportService';
 import IncidentService from '../IncidentService';
 import {
   LoginInfo,
+  GetResponse,
   CountResponse,
   CollectionResponse,
   EntityQuery,
@@ -15,12 +16,12 @@ import {
 import {Incident} from '../../models/Entities';
 import {Headline} from '../../models/Entities';
 import {HeadlinePropertyNames} from '../../models/Entities/PropertyNames';
-import {HeadlineLoadSpan} from '../../models/Entities/LoadSpans';
+import {HeadlineLoadSpan, IncidentLoadSpan} from '../../models/Entities/LoadSpans';
 import {IncidentStatusTypes} from '../../models/Entities/Enums';
 import moment from 'moment';
 
 describe('iSupport Service', () => {
-  let access_token = 'k1_l5WzYh7P77DZywmjutvsSoqXYB2JPfAkZwiYAMnGqG_FFtv4nZmyJMsrNb_pioAwBjtleTT0uz4M_E2xxDi81e8w5S8FBFjII5QER0iC9kGulBUV3HCglrECQiyRCPJecc_qtdHa8IGs0oprdN1wgyCmAKNX2bY-RdUx8HY7J_0FNDpUarCRKBbRCqr5U2gEzn2-kXLr7EOGGtZbXGIh427VMJ50KoETNkSIrAD2dvlnXGTNilQO8XECnECO_R0t-DZ7cNnwjMezQy1P2uPIpVmzSoMndwQYSW4PWCsYftfaUZ5k59hfUzc9CWnJpjNHQ8gBbOdibszF97JmN2QaKX2k9KQki12evcQu_9pc';
+  let access_token = '5053oty_LCijVsQXccqQOGz7k5TGvXj6fI0HdM5XG4v87z7tM-qDocdGG8lvRCA2P5RtIKSlp0rXn4XHPxT5SHrwzFK6LKokOpzdqr8BVoOXapuRSR0tsxJ8Jjb9ASJhpt6tMbNV-XDCAx2x1-BAZ4TfVt3kwQM-iRBXj-vQVY1Hz-iBDIa5m9mBsxxIl5oIGEx8DOAOb_oCPYrtOG_uXGrtF7yGQNIhZbDesHw_-jFnNqnrcPAIcyZpsltbFBK46qCPJ85Vpzf0JACzFgjd4cxO4Ejkc0vUorULPiUxJeF_33g6TLKMEEEZpnC-nDQUYtXfpNXjZ1WZzpub3J0G_ZLcS-A5SAPS-GqeTzjPntg';
   const rep = {Identifier: 12};
 
   // describe('tokenFlow', () => {
@@ -64,6 +65,20 @@ describe('iSupport Service', () => {
     it('it should properly init a new incident for the specified rep', async () => {
       const result:Incident = await IncidentService.initNew(rep, access_token)
       result.number.length.should.be.eql(10);
+    });
+  });
+
+  describe('IncidentGetExisting', () => {
+    it('it should properly get an existing incident for the specified id', async () => {
+      const loadSpan:IncidentLoadSpan = new IncidentLoadSpan();
+			loadSpan.number = true;
+			loadSpan.createdDate = true;
+			loadSpan.priority = true;
+			loadSpan.assigneeLoadSpan.id = true;
+			loadSpan.statusLoadSpan.id = true;
+
+      const result:GetResponse = await IncidentService.executeGet(1110, loadSpan, access_token)
+      result.item.number.length.should.be.eql(10);
     });
   });
 

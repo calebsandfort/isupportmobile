@@ -6,12 +6,15 @@ import CustomerLoadSpan from './CustomerLoadSpan';
 import SupportRepresentativeLoadSpan from './SupportRepresentativeLoadSpan';
 import IncidentLoadSpan from './IncidentLoadSpan';
 
-export class IncidentCustomerChatSessionLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class IncidentCustomerChatSessionLoadSpan extends LoadSpanBase {
   customer: CustomerLoadSpan;
   rep: SupportRepresentativeLoadSpan;
   incident: IncidentLoadSpan;
 
   constructor(){
+    super();
   }
 
   get customerLoadSpan(): CustomerLoadSpan {

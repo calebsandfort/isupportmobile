@@ -3,7 +3,9 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class AssetAttachmentLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class AssetAttachmentLoadSpan extends LoadSpanBase {
   fileName: boolean;
   fileType: boolean;
   fileSize: boolean;
@@ -11,6 +13,7 @@ export class AssetAttachmentLoadSpan {
   assetGuid: boolean;
 
   constructor(){
+    super();
     this.fileName = false;
     this.fileType = false;
     this.fileSize = false;

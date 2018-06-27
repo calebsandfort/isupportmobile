@@ -2,6 +2,7 @@
 /******************************************************************************
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
+import LoadSpanBase from './LoadSpanBase';
 import SupportRepresentativeLoadSpan from './SupportRepresentativeLoadSpan';
 import CustomerLoadSpan from './CustomerLoadSpan';
 import CompanyLoadSpan from './CompanyLoadSpan';
@@ -18,7 +19,7 @@ import ServiceContractLoadSpan from './ServiceContractLoadSpan';
 import RuleGroupLoadSpan from './RuleGroupLoadSpan';
 import EndUserDesktopDefinitionLoadSpan from './EndUserDesktopDefinitionLoadSpan';
 
-export class IncidentLoadSpan {
+export class IncidentLoadSpan extends LoadSpanBase {
   guid: boolean;
   routeCount: boolean;
   closedDate: boolean;
@@ -65,6 +66,8 @@ export class IncidentLoadSpan {
   socialClient: EndUserDesktopDefinitionLoadSpan;
 
   constructor(){
+    super();
+    super();
     this.guid = false;
     this.routeCount = false;
     this.closedDate = false;

@@ -4,7 +4,9 @@
 ******************************************************************************/
 import SurveyAssociatedQuestionLoadSpan from './SurveyAssociatedQuestionLoadSpan';
 
-export class SurveyQuestionDisplayConditionLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class SurveyQuestionDisplayConditionLoadSpan extends LoadSpanBase {
   matchValue: boolean;
   matchType: boolean;
   matchQuestion: SurveyAssociatedQuestionLoadSpan;
@@ -12,6 +14,7 @@ export class SurveyQuestionDisplayConditionLoadSpan {
   parent: SurveyQuestionDisplayConditionLoadSpan;
 
   constructor(){
+    super();
     this.matchValue = false;
     this.matchType = false;
   }

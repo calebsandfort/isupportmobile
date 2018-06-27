@@ -4,11 +4,14 @@
 ******************************************************************************/
 import SupportRepresentativeLoadSpan from './SupportRepresentativeLoadSpan';
 
-export class AcknowledgmentLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class AcknowledgmentLoadSpan extends LoadSpanBase {
   acknowledgmentDate: boolean;
   acknowledgmentRep: SupportRepresentativeLoadSpan;
 
   constructor(){
+    super();
     this.acknowledgmentDate = false;
   }
 

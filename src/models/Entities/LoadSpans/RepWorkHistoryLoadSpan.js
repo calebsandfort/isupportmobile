@@ -5,7 +5,9 @@
 import SupportRepresentativeLoadSpan from './SupportRepresentativeLoadSpan';
 import WorkHistoryTypeLoadSpan from './WorkHistoryTypeLoadSpan';
 
-export class RepWorkHistoryLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class RepWorkHistoryLoadSpan extends LoadSpanBase {
   createdDate: boolean;
   entry: boolean;
   incidentNumber: boolean;
@@ -16,6 +18,7 @@ export class RepWorkHistoryLoadSpan {
   workHistoryType: WorkHistoryTypeLoadSpan;
 
   constructor(){
+    super();
     this.createdDate = false;
     this.entry = false;
     this.incidentNumber = false;

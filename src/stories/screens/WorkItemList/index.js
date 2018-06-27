@@ -117,8 +117,9 @@ class WorkItemList extends React.Component<Props, State> {
 
       return (
 				<ListItem key={record.content.id} onPress={() =>
-						alert(record.content.id)
-					}>
+					this.props.navigation.navigate("ExistingIncident", {
+						id: record.content.id
+					})}>
 					<Body>
 						<Text>{record.content.number}</Text>
 						<Text note>

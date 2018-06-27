@@ -8,7 +8,9 @@ import IncidentConfigurationLoadSpan from './IncidentConfigurationLoadSpan';
 import ProblemConfigurationLoadSpan from './ProblemConfigurationLoadSpan';
 import ChangeConfigurationLoadSpan from './ChangeConfigurationLoadSpan';
 
-export class ConfigurationGroupLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ConfigurationGroupLoadSpan extends LoadSpanBase {
   globalConfiguration: GlobalConfigurationLoadSpan;
   assetConfiguration: AssetConfigurationLoadSpan;
   incidentConfiguration: IncidentConfigurationLoadSpan;
@@ -16,6 +18,7 @@ export class ConfigurationGroupLoadSpan {
   changeConfiguration: ChangeConfigurationLoadSpan;
 
   constructor(){
+    super();
   }
 
   get globalConfigurationLoadSpan(): GlobalConfigurationLoadSpan {

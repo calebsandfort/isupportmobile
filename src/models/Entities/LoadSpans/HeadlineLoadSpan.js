@@ -3,7 +3,9 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class HeadlineLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class HeadlineLoadSpan extends LoadSpanBase {
   message: boolean;
   details: boolean;
   expirationDate: boolean;
@@ -13,6 +15,7 @@ export class HeadlineLoadSpan {
   mySupportNotificationStyle: boolean;
 
   constructor(){
+    super();
     this.message = false;
     this.details = false;
     this.expirationDate = false;

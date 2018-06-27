@@ -4,13 +4,16 @@
 ******************************************************************************/
 import SupportRepresentativeLoadSpan from './SupportRepresentativeLoadSpan';
 
-export class ChangeSLAHistoryLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ChangeSLAHistoryLoadSpan extends LoadSpanBase {
   createdDate: boolean;
   entry: boolean;
   changeNumber: boolean;
   owner: SupportRepresentativeLoadSpan;
 
   constructor(){
+    super();
     this.createdDate = false;
     this.entry = false;
     this.changeNumber = false;

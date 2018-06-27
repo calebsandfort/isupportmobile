@@ -3,10 +3,13 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class JobFunctionLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class JobFunctionLoadSpan extends LoadSpanBase {
   name: boolean;
 
   constructor(){
+    super();
     this.name = false;
   }
 

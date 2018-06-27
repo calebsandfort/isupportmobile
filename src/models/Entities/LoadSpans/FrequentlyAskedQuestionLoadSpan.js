@@ -4,7 +4,9 @@
 ******************************************************************************/
 import FrequentlyAskedQuestionTopicLoadSpan from './FrequentlyAskedQuestionTopicLoadSpan';
 
-export class FrequentlyAskedQuestionLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class FrequentlyAskedQuestionLoadSpan extends LoadSpanBase {
   question: boolean;
   answer: boolean;
   dateCreated: boolean;
@@ -16,6 +18,7 @@ export class FrequentlyAskedQuestionLoadSpan {
   topic: FrequentlyAskedQuestionTopicLoadSpan;
 
   constructor(){
+    super();
     this.question = false;
     this.answer = false;
     this.dateCreated = false;

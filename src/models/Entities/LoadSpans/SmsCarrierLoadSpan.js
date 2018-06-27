@@ -3,11 +3,14 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class SmsCarrierLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class SmsCarrierLoadSpan extends LoadSpanBase {
   name: boolean;
   emailAddress: boolean;
 
   constructor(){
+    super();
     this.name = false;
     this.emailAddress = false;
   }

@@ -4,13 +4,16 @@
 ******************************************************************************/
 import ArchivedIncidentLoadSpan from './ArchivedIncidentLoadSpan';
 
-export class ArchivedIncidentAttachmentLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ArchivedIncidentAttachmentLoadSpan extends LoadSpanBase {
   fileName: boolean;
   fileData: boolean;
   fileType: boolean;
   incident: ArchivedIncidentLoadSpan;
 
   constructor(){
+    super();
     this.fileName = false;
     this.fileData = false;
     this.fileType = false;

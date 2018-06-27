@@ -7,7 +7,9 @@ import CompanyLoadSpan from './CompanyLoadSpan';
 import SupportRepresentativeLoadSpan from './SupportRepresentativeLoadSpan';
 import ProductLoadSpan from './ProductLoadSpan';
 
-export class VendorProductLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class VendorProductLoadSpan extends LoadSpanBase {
   price: boolean;
   customer: CustomerLoadSpan;
   company: CompanyLoadSpan;
@@ -15,6 +17,7 @@ export class VendorProductLoadSpan {
   product: ProductLoadSpan;
 
   constructor(){
+    super();
     this.price = false;
   }
 

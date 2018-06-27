@@ -5,7 +5,9 @@
 import AccessCircleLoadSpan from './AccessCircleLoadSpan';
 import DiscussionFeedIconLoadSpan from './DiscussionFeedIconLoadSpan';
 
-export class RepNewsFeedOptionsLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class RepNewsFeedOptionsLoadSpan extends LoadSpanBase {
   name: boolean;
   promotionEnabled: boolean;
   isPublic: boolean;
@@ -31,6 +33,7 @@ export class RepNewsFeedOptionsLoadSpan {
   icon: DiscussionFeedIconLoadSpan;
 
   constructor(){
+    super();
     this.name = false;
     this.promotionEnabled = false;
     this.isPublic = false;

@@ -15,6 +15,6 @@ export { EntityQuery as EntityQuery } from './entityQuery';
 export { SearchFilter as SearchFilter } from './entityQuery';
 export { SearchFilterCondition as SearchFilterCondition } from './entityQuery';
 
-
 export { IncidentSettingsState as IncidentSettingsState } from './incidentSettings';
 export { InitNewIncidentRequest as InitNewIncidentRequest } from './incidentSettings';
+export { GetExistingIncidentRequest as GetExistingIncidentRequest } from './incidentSettings';

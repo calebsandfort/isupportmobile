@@ -4,7 +4,9 @@
 ******************************************************************************/
 import ArchivedProblemLoadSpan from './ArchivedProblemLoadSpan';
 
-export class ArchivedProblemAssetLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ArchivedProblemAssetLoadSpan extends LoadSpanBase {
   tagNumber: boolean;
   type: boolean;
   location: boolean;
@@ -13,6 +15,7 @@ export class ArchivedProblemAssetLoadSpan {
   problem: ArchivedProblemLoadSpan;
 
   constructor(){
+    super();
     this.tagNumber = false;
     this.type = false;
     this.location = false;

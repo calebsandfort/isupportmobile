@@ -4,7 +4,9 @@
 ******************************************************************************/
 import ArchivedIncidentLoadSpan from './ArchivedIncidentLoadSpan';
 
-export class ArchivedAssetLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ArchivedAssetLoadSpan extends LoadSpanBase {
   tagNumber: boolean;
   type: boolean;
   location: boolean;
@@ -13,6 +15,7 @@ export class ArchivedAssetLoadSpan {
   incident: ArchivedIncidentLoadSpan;
 
   constructor(){
+    super();
     this.tagNumber = false;
     this.type = false;
     this.location = false;

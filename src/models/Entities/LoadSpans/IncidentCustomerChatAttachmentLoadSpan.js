@@ -3,7 +3,9 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class IncidentCustomerChatAttachmentLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class IncidentCustomerChatAttachmentLoadSpan extends LoadSpanBase {
   createdDate: boolean;
   fileName: boolean;
   fileType: boolean;
@@ -12,6 +14,7 @@ export class IncidentCustomerChatAttachmentLoadSpan {
   chatSessionKey: boolean;
 
   constructor(){
+    super();
     this.createdDate = false;
     this.fileName = false;
     this.fileType = false;

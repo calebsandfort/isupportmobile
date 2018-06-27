@@ -11,7 +11,9 @@ import UrgencyImpactMappingLoadSpan from './UrgencyImpactMappingLoadSpan';
 import IncidentLayoutLoadSpan from './IncidentLayoutLoadSpan';
 import WorkHistoryTypeLoadSpan from './WorkHistoryTypeLoadSpan';
 
-export class IncidentTemplateLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class IncidentTemplateLoadSpan extends LoadSpanBase {
   name: boolean;
   issueDescription: boolean;
   issueResolution: boolean;
@@ -41,6 +43,7 @@ export class IncidentTemplateLoadSpan {
   workHistoryType: WorkHistoryTypeLoadSpan;
 
   constructor(){
+    super();
     this.name = false;
     this.issueDescription = false;
     this.issueResolution = false;

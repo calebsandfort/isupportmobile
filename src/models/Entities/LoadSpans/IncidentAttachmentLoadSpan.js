@@ -3,7 +3,9 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class IncidentAttachmentLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class IncidentAttachmentLoadSpan extends LoadSpanBase {
   fileName: boolean;
   fileType: boolean;
   fileSize: boolean;
@@ -12,6 +14,7 @@ export class IncidentAttachmentLoadSpan {
   createdDate: boolean;
 
   constructor(){
+    super();
     this.fileName = false;
     this.fileType = false;
     this.fileSize = false;

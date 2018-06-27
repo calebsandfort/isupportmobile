@@ -5,13 +5,16 @@
 import SupportRepresentativeLoadSpan from './SupportRepresentativeLoadSpan';
 import KnowledgeEntryLoadSpan from './KnowledgeEntryLoadSpan';
 
-export class KnowledgeEntryAuditHistoryLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class KnowledgeEntryAuditHistoryLoadSpan extends LoadSpanBase {
   createdDate: boolean;
   entry: boolean;
   owner: SupportRepresentativeLoadSpan;
   knowledgeEntry: KnowledgeEntryLoadSpan;
 
   constructor(){
+    super();
     this.createdDate = false;
     this.entry = false;
   }

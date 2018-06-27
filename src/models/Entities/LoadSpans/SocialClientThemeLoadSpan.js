@@ -4,7 +4,9 @@
 ******************************************************************************/
 import SocialClientThemeImageLoadSpan from './SocialClientThemeImageLoadSpan';
 
-export class SocialClientThemeLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class SocialClientThemeLoadSpan extends LoadSpanBase {
   modifiedDate: boolean;
   widgetFontFamily: boolean;
   isDefault: boolean;
@@ -13,6 +15,7 @@ export class SocialClientThemeLoadSpan {
   headerImage: SocialClientThemeImageLoadSpan;
 
   constructor(){
+    super();
     this.modifiedDate = false;
     this.widgetFontFamily = false;
     this.isDefault = false;

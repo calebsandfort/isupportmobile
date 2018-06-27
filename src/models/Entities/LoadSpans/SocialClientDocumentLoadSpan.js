@@ -3,13 +3,16 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class SocialClientDocumentLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class SocialClientDocumentLoadSpan extends LoadSpanBase {
   fileName: boolean;
   fileType: boolean;
   fileSize: boolean;
   fileData: boolean;
 
   constructor(){
+    super();
     this.fileName = false;
     this.fileType = false;
     this.fileSize = false;

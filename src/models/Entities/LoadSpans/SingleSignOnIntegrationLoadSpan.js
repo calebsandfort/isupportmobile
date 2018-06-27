@@ -3,7 +3,9 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class SingleSignOnIntegrationLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class SingleSignOnIntegrationLoadSpan extends LoadSpanBase {
   name: boolean;
   active: boolean;
   loginButtonText: boolean;
@@ -13,6 +15,7 @@ export class SingleSignOnIntegrationLoadSpan {
   targetType: boolean;
 
   constructor(){
+    super();
     this.name = false;
     this.active = false;
     this.loginButtonText = false;

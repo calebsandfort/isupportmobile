@@ -4,13 +4,16 @@
 ******************************************************************************/
 import ArchivedPurchaseLoadSpan from './ArchivedPurchaseLoadSpan';
 
-export class ArchivedPurchaseAttachmentLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ArchivedPurchaseAttachmentLoadSpan extends LoadSpanBase {
   fileName: boolean;
   fileData: boolean;
   fileType: boolean;
   purchase: ArchivedPurchaseLoadSpan;
 
   constructor(){
+    super();
     this.fileName = false;
     this.fileData = false;
     this.fileType = false;

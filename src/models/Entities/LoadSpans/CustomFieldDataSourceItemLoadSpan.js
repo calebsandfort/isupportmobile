@@ -4,11 +4,14 @@
 ******************************************************************************/
 import CustomFieldDataSourceLoadSpan from './CustomFieldDataSourceLoadSpan';
 
-export class CustomFieldDataSourceItemLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class CustomFieldDataSourceItemLoadSpan extends LoadSpanBase {
   value: boolean;
   customFieldDataSource: CustomFieldDataSourceLoadSpan;
 
   constructor(){
+    super();
     this.value = false;
   }
 

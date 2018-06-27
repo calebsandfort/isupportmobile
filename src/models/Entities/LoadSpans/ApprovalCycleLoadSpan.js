@@ -3,7 +3,9 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class ApprovalCycleLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ApprovalCycleLoadSpan extends LoadSpanBase {
   name: boolean;
   description: boolean;
   numberOfVerdictsToApprove: boolean;
@@ -11,6 +13,7 @@ export class ApprovalCycleLoadSpan {
   notificationOrderType: boolean;
 
   constructor(){
+    super();
     this.name = false;
     this.description = false;
     this.numberOfVerdictsToApprove = false;

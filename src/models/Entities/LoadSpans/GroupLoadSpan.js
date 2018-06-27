@@ -5,7 +5,9 @@
 import LocationLoadSpan from './LocationLoadSpan';
 import EndUserDesktopDefinitionLoadSpan from './EndUserDesktopDefinitionLoadSpan';
 
-export class GroupLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class GroupLoadSpan extends LoadSpanBase {
   name: boolean;
   description: boolean;
   tag: boolean;
@@ -14,6 +16,7 @@ export class GroupLoadSpan {
   defaultSocialClient: EndUserDesktopDefinitionLoadSpan;
 
   constructor(){
+    super();
     this.name = false;
     this.description = false;
     this.tag = false;

@@ -3,7 +3,9 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class CorrespondenceDeletionShadowLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class CorrespondenceDeletionShadowLoadSpan extends LoadSpanBase {
   subject: boolean;
   dateDeleted: boolean;
   deletedBy: boolean;
@@ -13,6 +15,7 @@ export class CorrespondenceDeletionShadowLoadSpan {
   to: boolean;
 
   constructor(){
+    super();
     this.subject = false;
     this.dateDeleted = false;
     this.deletedBy = false;

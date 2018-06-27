@@ -3,12 +3,15 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class IncidentStatusLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class IncidentStatusLoadSpan extends LoadSpanBase {
   label: boolean;
   labelOnEud: boolean;
   type: boolean;
 
   constructor(){
+    super();
     this.label = false;
     this.labelOnEud = false;
     this.type = false;

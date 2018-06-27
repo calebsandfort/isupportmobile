@@ -3,9 +3,12 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class CustomIconLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class CustomIconLoadSpan extends LoadSpanBase {
 
   constructor(){
+    super();
   }
 
   loadAllProperties() {

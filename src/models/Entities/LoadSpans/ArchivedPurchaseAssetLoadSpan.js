@@ -4,7 +4,9 @@
 ******************************************************************************/
 import ArchivedPurchaseLoadSpan from './ArchivedPurchaseLoadSpan';
 
-export class ArchivedPurchaseAssetLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ArchivedPurchaseAssetLoadSpan extends LoadSpanBase {
   tagNumber: boolean;
   type: boolean;
   location: boolean;
@@ -13,6 +15,7 @@ export class ArchivedPurchaseAssetLoadSpan {
   purchase: ArchivedPurchaseLoadSpan;
 
   constructor(){
+    super();
     this.tagNumber = false;
     this.type = false;
     this.location = false;

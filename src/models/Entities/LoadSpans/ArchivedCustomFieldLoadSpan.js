@@ -4,12 +4,15 @@
 ******************************************************************************/
 import ArchivedIncidentLoadSpan from './ArchivedIncidentLoadSpan';
 
-export class ArchivedCustomFieldLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ArchivedCustomFieldLoadSpan extends LoadSpanBase {
   value: boolean;
   label: boolean;
   incident: ArchivedIncidentLoadSpan;
 
   constructor(){
+    super();
     this.value = false;
     this.label = false;
   }

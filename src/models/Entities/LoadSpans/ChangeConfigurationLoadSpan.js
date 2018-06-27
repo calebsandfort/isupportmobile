@@ -8,7 +8,9 @@ import ChangeStatusLoadSpan from './ChangeStatusLoadSpan';
 import CustomChangeTypeLoadSpan from './CustomChangeTypeLoadSpan';
 import WorkHistoryTypeLoadSpan from './WorkHistoryTypeLoadSpan';
 
-export class ChangeConfigurationLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ChangeConfigurationLoadSpan extends LoadSpanBase {
   includeCustomerWorkHistory: boolean;
   defaultScheduledImplementationInterval: boolean;
   defaultReviewInterval: boolean;
@@ -24,6 +26,7 @@ export class ChangeConfigurationLoadSpan {
   defaultWorkHistoryType: WorkHistoryTypeLoadSpan;
 
   constructor(){
+    super();
     this.includeCustomerWorkHistory = false;
     this.defaultScheduledImplementationInterval = false;
     this.defaultReviewInterval = false;

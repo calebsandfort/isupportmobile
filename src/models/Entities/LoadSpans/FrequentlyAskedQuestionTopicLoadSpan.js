@@ -3,11 +3,14 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class FrequentlyAskedQuestionTopicLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class FrequentlyAskedQuestionTopicLoadSpan extends LoadSpanBase {
   label: boolean;
   position: boolean;
 
   constructor(){
+    super();
     this.label = false;
     this.position = false;
   }

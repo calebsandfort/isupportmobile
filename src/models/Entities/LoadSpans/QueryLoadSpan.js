@@ -5,7 +5,9 @@
 import SupportRepresentativeLoadSpan from './SupportRepresentativeLoadSpan';
 import AccessCircleLoadSpan from './AccessCircleLoadSpan';
 
-export class QueryLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class QueryLoadSpan extends LoadSpanBase {
   viewName: boolean;
   displayName: boolean;
   query: boolean;
@@ -29,6 +31,7 @@ export class QueryLoadSpan {
   accessCircle: AccessCircleLoadSpan;
 
   constructor(){
+    super();
     this.viewName = false;
     this.displayName = false;
     this.query = false;

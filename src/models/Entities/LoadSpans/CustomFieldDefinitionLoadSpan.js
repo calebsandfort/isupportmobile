@@ -4,7 +4,9 @@
 ******************************************************************************/
 import CustomFieldDataSourceLoadSpan from './CustomFieldDataSourceLoadSpan';
 
-export class CustomFieldDefinitionLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class CustomFieldDefinitionLoadSpan extends LoadSpanBase {
   collectionId: boolean;
   position: boolean;
   label: boolean;
@@ -21,6 +23,7 @@ export class CustomFieldDefinitionLoadSpan {
   dataSource: CustomFieldDataSourceLoadSpan;
 
   constructor(){
+    super();
     this.collectionId = false;
     this.position = false;
     this.label = false;

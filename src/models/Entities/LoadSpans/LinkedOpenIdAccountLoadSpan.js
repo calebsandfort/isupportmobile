@@ -4,13 +4,16 @@
 ******************************************************************************/
 import CustomerLoadSpan from './CustomerLoadSpan';
 
-export class LinkedOpenIdAccountLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class LinkedOpenIdAccountLoadSpan extends LoadSpanBase {
   name: boolean;
   accountId: boolean;
   type: boolean;
   customer: CustomerLoadSpan;
 
   constructor(){
+    super();
     this.name = false;
     this.accountId = false;
     this.type = false;

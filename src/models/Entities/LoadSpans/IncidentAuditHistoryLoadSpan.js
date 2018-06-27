@@ -5,7 +5,9 @@
 import SupportRepresentativeLoadSpan from './SupportRepresentativeLoadSpan';
 import CustomerLoadSpan from './CustomerLoadSpan';
 
-export class IncidentAuditHistoryLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class IncidentAuditHistoryLoadSpan extends LoadSpanBase {
   createdDate: boolean;
   entry: boolean;
   incidentNumber: boolean;
@@ -13,6 +15,7 @@ export class IncidentAuditHistoryLoadSpan {
   customerOwner: CustomerLoadSpan;
 
   constructor(){
+    super();
     this.createdDate = false;
     this.entry = false;
     this.incidentNumber = false;

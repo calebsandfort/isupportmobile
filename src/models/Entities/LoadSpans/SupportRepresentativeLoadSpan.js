@@ -7,7 +7,9 @@ import GroupLoadSpan from './GroupLoadSpan';
 import UserAvatarImageLoadSpan from './UserAvatarImageLoadSpan';
 import AccessCircleLoadSpan from './AccessCircleLoadSpan';
 
-export class SupportRepresentativeLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class SupportRepresentativeLoadSpan extends LoadSpanBase {
   firstName: boolean;
   lastName: boolean;
   emailAddress: boolean;
@@ -31,6 +33,7 @@ export class SupportRepresentativeLoadSpan {
   personalContactsList: AccessCircleLoadSpan;
 
   constructor(){
+    super();
     this.firstName = false;
     this.lastName = false;
     this.emailAddress = false;

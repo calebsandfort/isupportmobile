@@ -4,13 +4,16 @@
 ******************************************************************************/
 import CustomerLoadSpan from './CustomerLoadSpan';
 
-export class CorrespondenceLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class CorrespondenceLoadSpan extends LoadSpanBase {
   sent: boolean;
   body: boolean;
   guid: boolean;
   customer: CustomerLoadSpan;
 
   constructor(){
+    super();
     this.sent = false;
     this.body = false;
     this.guid = false;

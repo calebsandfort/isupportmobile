@@ -5,7 +5,9 @@
 import PurchaseLoadSpan from './PurchaseLoadSpan';
 import VendorProductLoadSpan from './VendorProductLoadSpan';
 
-export class PurchaseProductLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class PurchaseProductLoadSpan extends LoadSpanBase {
   rate: boolean;
   quantity: boolean;
   quantityReceived: boolean;
@@ -17,6 +19,7 @@ export class PurchaseProductLoadSpan {
   vendorProduct: VendorProductLoadSpan;
 
   constructor(){
+    super();
     this.rate = false;
     this.quantity = false;
     this.quantityReceived = false;

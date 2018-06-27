@@ -7,7 +7,9 @@ import IncidentApprovalHistoryLoadSpan from './IncidentApprovalHistoryLoadSpan';
 import ChangeApprovalHistoryLoadSpan from './ChangeApprovalHistoryLoadSpan';
 import PurchaseApprovalHistoryLoadSpan from './PurchaseApprovalHistoryLoadSpan';
 
-export class WorkflowCycleApproverHistoryLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class WorkflowCycleApproverHistoryLoadSpan extends LoadSpanBase {
   synopsis: boolean;
   workflowCycleApprover: WorkflowCycleApproverLoadSpan;
   incidentApprovalHistoryEntry: IncidentApprovalHistoryLoadSpan;
@@ -15,6 +17,7 @@ export class WorkflowCycleApproverHistoryLoadSpan {
   purchaseApprovalHistoryEntry: PurchaseApprovalHistoryLoadSpan;
 
   constructor(){
+    super();
     this.synopsis = false;
   }
 

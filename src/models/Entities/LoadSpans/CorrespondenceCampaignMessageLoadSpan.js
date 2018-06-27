@@ -4,11 +4,14 @@
 ******************************************************************************/
 import CorrespondenceLoadSpan from './CorrespondenceLoadSpan';
 
-export class CorrespondenceCampaignMessageLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class CorrespondenceCampaignMessageLoadSpan extends LoadSpanBase {
   result: boolean;
   correspondence: CorrespondenceLoadSpan;
 
   constructor(){
+    super();
     this.result = false;
   }
 

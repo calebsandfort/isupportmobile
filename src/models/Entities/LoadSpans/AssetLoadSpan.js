@@ -8,7 +8,9 @@ import AssetRDBIntegrationDefinitionLoadSpan from './AssetRDBIntegrationDefiniti
 import InventoryAssetLoadSpan from './InventoryAssetLoadSpan';
 import RuleGroupLoadSpan from './RuleGroupLoadSpan';
 
-export class AssetLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class AssetLoadSpan extends LoadSpanBase {
   guid: boolean;
   name: boolean;
   manufacturer: boolean;
@@ -32,6 +34,7 @@ export class AssetLoadSpan {
   staticEffectiveRuleGroup: RuleGroupLoadSpan;
 
   constructor(){
+    super();
     this.guid = false;
     this.name = false;
     this.manufacturer = false;

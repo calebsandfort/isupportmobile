@@ -3,10 +3,13 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class CompanyStatusLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class CompanyStatusLoadSpan extends LoadSpanBase {
   label: boolean;
 
   constructor(){
+    super();
     this.label = false;
   }
 

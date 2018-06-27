@@ -6,7 +6,9 @@ import RuleGroupLoadSpan from './RuleGroupLoadSpan';
 import CategoryLoadSpan from './CategoryLoadSpan';
 import SupportRepresentativeLoadSpan from './SupportRepresentativeLoadSpan';
 
-export class KnowledgeEntryLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class KnowledgeEntryLoadSpan extends LoadSpanBase {
   problem: boolean;
   resolution: boolean;
   createdDate: boolean;
@@ -31,6 +33,7 @@ export class KnowledgeEntryLoadSpan {
   modifiedBy: SupportRepresentativeLoadSpan;
 
   constructor(){
+    super();
     this.problem = false;
     this.resolution = false;
     this.createdDate = false;

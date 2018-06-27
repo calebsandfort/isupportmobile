@@ -6,13 +6,16 @@ import WorkflowApprovalCycleLoadSpan from './WorkflowApprovalCycleLoadSpan';
 import CustomerLoadSpan from './CustomerLoadSpan';
 import SupportRepresentativeLoadSpan from './SupportRepresentativeLoadSpan';
 
-export class WorkflowCycleApproverLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class WorkflowCycleApproverLoadSpan extends LoadSpanBase {
   status: boolean;
   workflowApprovalCycle: WorkflowApprovalCycleLoadSpan;
   customer: CustomerLoadSpan;
   rep: SupportRepresentativeLoadSpan;
 
   constructor(){
+    super();
     this.status = false;
   }
 

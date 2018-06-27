@@ -4,7 +4,9 @@
 ******************************************************************************/
 import ArchivedChangeLoadSpan from './ArchivedChangeLoadSpan';
 
-export class ArchivedChangeCorrespondenceLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ArchivedChangeCorrespondenceLoadSpan extends LoadSpanBase {
   dateMessage: boolean;
   subject: boolean;
   priority: boolean;
@@ -14,6 +16,7 @@ export class ArchivedChangeCorrespondenceLoadSpan {
   change: ArchivedChangeLoadSpan;
 
   constructor(){
+    super();
     this.dateMessage = false;
     this.subject = false;
     this.priority = false;

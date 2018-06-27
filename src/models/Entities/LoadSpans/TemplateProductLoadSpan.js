@@ -5,7 +5,9 @@
 import PurchaseTemplateLoadSpan from './PurchaseTemplateLoadSpan';
 import VendorProductLoadSpan from './VendorProductLoadSpan';
 
-export class TemplateProductLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class TemplateProductLoadSpan extends LoadSpanBase {
   rate: boolean;
   quantity: boolean;
   createAssetRecordUponReceipt: boolean;
@@ -16,6 +18,7 @@ export class TemplateProductLoadSpan {
   vendorProduct: VendorProductLoadSpan;
 
   constructor(){
+    super();
     this.rate = false;
     this.quantity = false;
     this.createAssetRecordUponReceipt = false;

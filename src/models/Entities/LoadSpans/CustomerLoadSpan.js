@@ -14,7 +14,9 @@ import TwitterInfoLoadSpan from './TwitterInfoLoadSpan';
 import EntityFollowProfileLoadSpan from './EntityFollowProfileLoadSpan';
 import CorrespondenceLoadSpan from './CorrespondenceLoadSpan';
 
-export class CustomerLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class CustomerLoadSpan extends LoadSpanBase {
   guid: boolean;
   firstName: boolean;
   lastName: boolean;
@@ -81,6 +83,7 @@ export class CustomerLoadSpan {
   unsubscribedSourceCorrespondence: CorrespondenceLoadSpan;
 
   constructor(){
+    super();
     this.guid = false;
     this.firstName = false;
     this.lastName = false;

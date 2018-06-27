@@ -4,12 +4,15 @@
 ******************************************************************************/
 import ArchivedPurchaseLoadSpan from './ArchivedPurchaseLoadSpan';
 
-export class ArchivedPurchaseCustomFieldLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ArchivedPurchaseCustomFieldLoadSpan extends LoadSpanBase {
   value: boolean;
   label: boolean;
   purchase: ArchivedPurchaseLoadSpan;
 
   constructor(){
+    super();
     this.value = false;
     this.label = false;
   }

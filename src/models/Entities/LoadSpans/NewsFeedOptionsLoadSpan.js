@@ -5,7 +5,9 @@
 import CustomerLoadSpan from './CustomerLoadSpan';
 import SocialClientOptionsLoadSpan from './SocialClientOptionsLoadSpan';
 
-export class NewsFeedOptionsLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class NewsFeedOptionsLoadSpan extends LoadSpanBase {
   viewCompanyWorkItems: boolean;
   viewDepartmentWorkItems: boolean;
   viewLocationWorkItems: boolean;
@@ -20,6 +22,7 @@ export class NewsFeedOptionsLoadSpan {
   socialClientOptions: SocialClientOptionsLoadSpan;
 
   constructor(){
+    super();
     this.viewCompanyWorkItems = false;
     this.viewDepartmentWorkItems = false;
     this.viewLocationWorkItems = false;

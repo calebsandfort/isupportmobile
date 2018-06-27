@@ -7,7 +7,9 @@ import SocialClientOptionsLoadSpan from './SocialClientOptionsLoadSpan';
 import CustomerLoadSpan from './CustomerLoadSpan';
 import CategoryLoadSpan from './CategoryLoadSpan';
 
-export class SocialClientQueryLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class SocialClientQueryLoadSpan extends LoadSpanBase {
   name: boolean;
   description: boolean;
   itemCount: boolean;
@@ -24,6 +26,7 @@ export class SocialClientQueryLoadSpan {
   category: CategoryLoadSpan;
 
   constructor(){
+    super();
     this.name = false;
     this.description = false;
     this.itemCount = false;

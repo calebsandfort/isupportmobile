@@ -4,7 +4,9 @@
 ******************************************************************************/
 import TutorialStepLoadSpan from './TutorialStepLoadSpan';
 
-export class TutorialStepTagLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class TutorialStepTagLoadSpan extends LoadSpanBase {
   description: boolean;
   content: boolean;
   top: boolean;
@@ -14,6 +16,7 @@ export class TutorialStepTagLoadSpan {
   step: TutorialStepLoadSpan;
 
   constructor(){
+    super();
     this.description = false;
     this.content = false;
     this.top = false;

@@ -6,7 +6,9 @@ import PurchaseStatusLoadSpan from './PurchaseStatusLoadSpan';
 import CostCenterLoadSpan from './CostCenterLoadSpan';
 import JobFunctionLoadSpan from './JobFunctionLoadSpan';
 
-export class PurchaseTemplateLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class PurchaseTemplateLoadSpan extends LoadSpanBase {
   name: boolean;
   shortDescription: boolean;
   comments: boolean;
@@ -17,6 +19,7 @@ export class PurchaseTemplateLoadSpan {
   jobFunction: JobFunctionLoadSpan;
 
   constructor(){
+    super();
     this.name = false;
     this.shortDescription = false;
     this.comments = false;

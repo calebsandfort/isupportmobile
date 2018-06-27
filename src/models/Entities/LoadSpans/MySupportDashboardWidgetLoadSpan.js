@@ -4,7 +4,9 @@
 ******************************************************************************/
 import MySupportDashboardLoadSpan from './MySupportDashboardLoadSpan';
 
-export class MySupportDashboardWidgetLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class MySupportDashboardWidgetLoadSpan extends LoadSpanBase {
   name: boolean;
   icon: boolean;
   height: boolean;
@@ -16,6 +18,7 @@ export class MySupportDashboardWidgetLoadSpan {
   dashboard: MySupportDashboardLoadSpan;
 
   constructor(){
+    super();
     this.name = false;
     this.icon = false;
     this.height = false;

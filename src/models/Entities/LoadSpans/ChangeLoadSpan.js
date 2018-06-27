@@ -20,7 +20,9 @@ import ServiceContractLoadSpan from './ServiceContractLoadSpan';
 import RuleGroupLoadSpan from './RuleGroupLoadSpan';
 import EndUserDesktopDefinitionLoadSpan from './EndUserDesktopDefinitionLoadSpan';
 
-export class ChangeLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ChangeLoadSpan extends LoadSpanBase {
   guid: boolean;
   number: boolean;
   createdDate: boolean;
@@ -78,6 +80,7 @@ export class ChangeLoadSpan {
   socialClient: EndUserDesktopDefinitionLoadSpan;
 
   constructor(){
+    super();
     this.guid = false;
     this.number = false;
     this.createdDate = false;

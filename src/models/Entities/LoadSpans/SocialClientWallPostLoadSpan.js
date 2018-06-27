@@ -8,7 +8,9 @@ import KnowledgeEntryLoadSpan from './KnowledgeEntryLoadSpan';
 import RepNewsFeedOptionsLoadSpan from './RepNewsFeedOptionsLoadSpan';
 import PollLoadSpan from './PollLoadSpan';
 
-export class SocialClientWallPostLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class SocialClientWallPostLoadSpan extends LoadSpanBase {
   message: boolean;
   createdDate: boolean;
   removed: boolean;
@@ -29,6 +31,7 @@ export class SocialClientWallPostLoadSpan {
   poll: PollLoadSpan;
 
   constructor(){
+    super();
     this.message = false;
     this.createdDate = false;
     this.removed = false;

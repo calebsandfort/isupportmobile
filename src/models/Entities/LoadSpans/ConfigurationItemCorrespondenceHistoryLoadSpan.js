@@ -3,11 +3,14 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class ConfigurationItemCorrespondenceHistoryLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ConfigurationItemCorrespondenceHistoryLoadSpan extends LoadSpanBase {
   createdDate: boolean;
   entry: boolean;
 
   constructor(){
+    super();
     this.createdDate = false;
     this.entry = false;
   }

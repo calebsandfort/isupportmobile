@@ -3,7 +3,9 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class ArchivedIncidentLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ArchivedIncidentLoadSpan extends LoadSpanBase {
   company: boolean;
   customer: boolean;
   customerFirstName: boolean;
@@ -60,6 +62,7 @@ export class ArchivedIncidentLoadSpan {
   repChatHistory: boolean;
 
   constructor(){
+    super();
     this.company = false;
     this.customer = false;
     this.customerFirstName = false;

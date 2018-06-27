@@ -3,7 +3,9 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class CustomChangeTypeLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class CustomChangeTypeLoadSpan extends LoadSpanBase {
   label: boolean;
   position: boolean;
   eudLabel: boolean;
@@ -11,6 +13,7 @@ export class CustomChangeTypeLoadSpan {
   type: boolean;
 
   constructor(){
+    super();
     this.label = false;
     this.position = false;
     this.eudLabel = false;

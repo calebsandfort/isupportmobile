@@ -4,7 +4,9 @@
 ******************************************************************************/
 import MySupportCalendarLoadSpan from './MySupportCalendarLoadSpan';
 
-export class MySupportCalendarTaskLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class MySupportCalendarTaskLoadSpan extends LoadSpanBase {
   title: boolean;
   description: boolean;
   start: boolean;
@@ -18,6 +20,7 @@ export class MySupportCalendarTaskLoadSpan {
   calendar: MySupportCalendarLoadSpan;
 
   constructor(){
+    super();
     this.title = false;
     this.description = false;
     this.start = false;

@@ -5,7 +5,9 @@
 import SelfHelpGuideItemLoadSpan from './SelfHelpGuideItemLoadSpan';
 import AccessCircleLoadSpan from './AccessCircleLoadSpan';
 
-export class MySupportFeedLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class MySupportFeedLoadSpan extends LoadSpanBase {
   name: boolean;
   detailFields: boolean;
   textFields: boolean;
@@ -17,6 +19,7 @@ export class MySupportFeedLoadSpan {
   accessCircle: AccessCircleLoadSpan;
 
   constructor(){
+    super();
     this.name = false;
     this.detailFields = false;
     this.textFields = false;

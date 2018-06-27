@@ -3,11 +3,14 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class FacebookIntegrationInfoLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class FacebookIntegrationInfoLoadSpan extends LoadSpanBase {
   appId: boolean;
   appSecret: boolean;
 
   constructor(){
+    super();
     this.appId = false;
     this.appSecret = false;
   }

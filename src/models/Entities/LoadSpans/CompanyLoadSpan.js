@@ -10,7 +10,9 @@ import EndUserDesktopDefinitionLoadSpan from './EndUserDesktopDefinitionLoadSpan
 import SupportRepresentativeLoadSpan from './SupportRepresentativeLoadSpan';
 import CompanyStatusLoadSpan from './CompanyStatusLoadSpan';
 
-export class CompanyLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class CompanyLoadSpan extends LoadSpanBase {
   name: boolean;
   number: boolean;
   phone: boolean;
@@ -34,6 +36,7 @@ export class CompanyLoadSpan {
   status: CompanyStatusLoadSpan;
 
   constructor(){
+    super();
     this.name = false;
     this.number = false;
     this.phone = false;

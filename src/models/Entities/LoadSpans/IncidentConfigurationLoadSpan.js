@@ -6,7 +6,9 @@ import UrgencyImpactMappingLoadSpan from './UrgencyImpactMappingLoadSpan';
 import IncidentStatusLoadSpan from './IncidentStatusLoadSpan';
 import WorkHistoryTypeLoadSpan from './WorkHistoryTypeLoadSpan';
 
-export class IncidentConfigurationLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class IncidentConfigurationLoadSpan extends LoadSpanBase {
   categoryEnabled: boolean;
   categoryDepth: boolean;
   approvalsEnabled: boolean;
@@ -25,6 +27,7 @@ export class IncidentConfigurationLoadSpan {
   defaultWorkHistoryType: WorkHistoryTypeLoadSpan;
 
   constructor(){
+    super();
     this.categoryEnabled = false;
     this.categoryDepth = false;
     this.approvalsEnabled = false;

@@ -3,7 +3,9 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class SurveyQuestionLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class SurveyQuestionLoadSpan extends LoadSpanBase {
   question: boolean;
   description: boolean;
   options: boolean;
@@ -15,6 +17,7 @@ export class SurveyQuestionLoadSpan {
   questionType: boolean;
 
   constructor(){
+    super();
     this.question = false;
     this.description = false;
     this.options = false;

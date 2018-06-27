@@ -4,12 +4,15 @@
 ******************************************************************************/
 import ArchivedPurchaseCorrespondenceLoadSpan from './ArchivedPurchaseCorrespondenceLoadSpan';
 
-export class ArchivedPurchaseCorrespondenceRecipientLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ArchivedPurchaseCorrespondenceRecipientLoadSpan extends LoadSpanBase {
   name: boolean;
   type: boolean;
   correspondence: ArchivedPurchaseCorrespondenceLoadSpan;
 
   constructor(){
+    super();
     this.name = false;
     this.type = false;
   }

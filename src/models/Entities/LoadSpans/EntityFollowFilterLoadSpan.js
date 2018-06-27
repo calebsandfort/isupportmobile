@@ -4,7 +4,9 @@
 ******************************************************************************/
 import EntityFollowProfileLoadSpan from './EntityFollowProfileLoadSpan';
 
-export class EntityFollowFilterLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class EntityFollowFilterLoadSpan extends LoadSpanBase {
   filterValue: boolean;
   helperValue1: boolean;
   helperValue2: boolean;
@@ -13,6 +15,7 @@ export class EntityFollowFilterLoadSpan {
   entityFollowProfile: EntityFollowProfileLoadSpan;
 
   constructor(){
+    super();
     this.filterValue = false;
     this.helperValue1 = false;
     this.helperValue2 = false;

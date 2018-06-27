@@ -5,13 +5,16 @@
 import TutorialLoadSpan from './TutorialLoadSpan';
 import TutorialStepImageLoadSpan from './TutorialStepImageLoadSpan';
 
-export class TutorialStepLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class TutorialStepLoadSpan extends LoadSpanBase {
   name: boolean;
   position: boolean;
   tutorial: TutorialLoadSpan;
   image: TutorialStepImageLoadSpan;
 
   constructor(){
+    super();
     this.name = false;
     this.position = false;
   }

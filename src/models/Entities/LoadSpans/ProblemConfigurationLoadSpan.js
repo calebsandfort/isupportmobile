@@ -8,7 +8,9 @@ import ProblemStatusLoadSpan from './ProblemStatusLoadSpan';
 import IncidentStatusLoadSpan from './IncidentStatusLoadSpan';
 import WorkHistoryTypeLoadSpan from './WorkHistoryTypeLoadSpan';
 
-export class ProblemConfigurationLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ProblemConfigurationLoadSpan extends LoadSpanBase {
   setAssigneeAsAuthor: boolean;
   workHistoryTimeRequired: boolean;
   workHistoryTypeFieldEnabled: boolean;
@@ -20,6 +22,7 @@ export class ProblemConfigurationLoadSpan {
   defaultWorkHistoryType: WorkHistoryTypeLoadSpan;
 
   constructor(){
+    super();
     this.setAssigneeAsAuthor = false;
     this.workHistoryTimeRequired = false;
     this.workHistoryTypeFieldEnabled = false;

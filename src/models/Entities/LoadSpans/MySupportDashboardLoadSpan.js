@@ -6,7 +6,9 @@ import SupportRepresentativeLoadSpan from './SupportRepresentativeLoadSpan';
 import CustomerLoadSpan from './CustomerLoadSpan';
 import TutorialLoadSpan from './TutorialLoadSpan';
 
-export class MySupportDashboardLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class MySupportDashboardLoadSpan extends LoadSpanBase {
   name: boolean;
   description: boolean;
   json: boolean;
@@ -15,6 +17,7 @@ export class MySupportDashboardLoadSpan {
   tutorial: TutorialLoadSpan;
 
   constructor(){
+    super();
     this.name = false;
     this.description = false;
     this.json = false;

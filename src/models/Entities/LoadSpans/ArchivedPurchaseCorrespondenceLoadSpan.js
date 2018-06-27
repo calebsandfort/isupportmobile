@@ -4,7 +4,9 @@
 ******************************************************************************/
 import ArchivedPurchaseLoadSpan from './ArchivedPurchaseLoadSpan';
 
-export class ArchivedPurchaseCorrespondenceLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ArchivedPurchaseCorrespondenceLoadSpan extends LoadSpanBase {
   dateMessage: boolean;
   subject: boolean;
   priority: boolean;
@@ -14,6 +16,7 @@ export class ArchivedPurchaseCorrespondenceLoadSpan {
   purchase: ArchivedPurchaseLoadSpan;
 
   constructor(){
+    super();
     this.dateMessage = false;
     this.subject = false;
     this.priority = false;

@@ -4,7 +4,9 @@
 ******************************************************************************/
 import ArchivedPurchaseLoadSpan from './ArchivedPurchaseLoadSpan';
 
-export class ArchivedPurchaseProductLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ArchivedPurchaseProductLoadSpan extends LoadSpanBase {
   vendor: boolean;
   product: boolean;
   quantity: boolean;
@@ -16,6 +18,7 @@ export class ArchivedPurchaseProductLoadSpan {
   purchase: ArchivedPurchaseLoadSpan;
 
   constructor(){
+    super();
     this.vendor = false;
     this.product = false;
     this.quantity = false;

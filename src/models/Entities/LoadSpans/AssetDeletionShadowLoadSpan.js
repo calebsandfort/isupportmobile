@@ -3,13 +3,16 @@
 * THIS FILE IS GENERATED ANY CHANGES WILL BE LOST NEXT TIME CODE IS GENERATED *
 ******************************************************************************/
 
-export class AssetDeletionShadowLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class AssetDeletionShadowLoadSpan extends LoadSpanBase {
   name: boolean;
   dateDeleted: boolean;
   deletedBy: boolean;
   originalIdentifier: boolean;
 
   constructor(){
+    super();
     this.name = false;
     this.dateDeleted = false;
     this.deletedBy = false;

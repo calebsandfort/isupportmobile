@@ -8,7 +8,9 @@ import PurchaseTemplateLoadSpan from './PurchaseTemplateLoadSpan';
 import KnowledgeEntryLoadSpan from './KnowledgeEntryLoadSpan';
 import FrequentlyAskedQuestionLoadSpan from './FrequentlyAskedQuestionLoadSpan';
 
-export class SelfHelpGuideItemLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class SelfHelpGuideItemLoadSpan extends LoadSpanBase {
   displayText: boolean;
   helpInfoLabel: boolean;
   helpInfo: boolean;
@@ -22,6 +24,7 @@ export class SelfHelpGuideItemLoadSpan {
   frequentlyAskedQuestion: FrequentlyAskedQuestionLoadSpan;
 
   constructor(){
+    super();
     this.displayText = false;
     this.helpInfoLabel = false;
     this.helpInfo = false;

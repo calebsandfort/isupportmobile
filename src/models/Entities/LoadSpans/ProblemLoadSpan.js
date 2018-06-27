@@ -12,7 +12,9 @@ import ImpactLoadSpan from './ImpactLoadSpan';
 import UrgencyLoadSpan from './UrgencyLoadSpan';
 import RuleGroupLoadSpan from './RuleGroupLoadSpan';
 
-export class ProblemLoadSpan {
+import LoadSpanBase from './LoadSpanBase';
+
+export class ProblemLoadSpan extends LoadSpanBase {
   guid: boolean;
   number: boolean;
   createdDate: boolean;
@@ -45,6 +47,7 @@ export class ProblemLoadSpan {
   staticEffectiveRuleGroup: RuleGroupLoadSpan;
 
   constructor(){
+    super();
     this.guid = false;
     this.number = false;
     this.createdDate = false;
