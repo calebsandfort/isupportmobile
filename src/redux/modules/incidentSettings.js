@@ -1,12 +1,13 @@
 //@flow
 import { loop, Cmd } from 'redux-loop';
-import { Incident } from '../../models/Entities';
+import { Incident, SupportRepresentative } from '../../models/Entities';
 import { IncidentStatusPropertyNames } from '../../models/Entities/PropertyNames';
 import { IncidentStatusLoadSpan, IncidentLoadSpan } from '../../models/Entities/LoadSpans';
 import { IncidentStatusTypes } from '../../models/Entities/Enums';
 import { IncidentStatusService, IncidentService } from '../../services';
 import { IncidentSettingsState, InitNewIncidentRequest, GetExistingIncidentRequest,
-  ServiceError, GetResponse, CollectionResponse, EntityQuery, SearchFilter, SearchFilterCondition } from '../../models';
+  ServiceError, GetResponse, CollectionResponse, EntityQuery, SearchFilter, SearchFilterCondition,
+  UpdateRepFieldRequest } from '../../models';
 
 const initialState: IncidentSettingsState = {
   statusesLoaded: false,
@@ -96,15 +97,34 @@ export function getExistingFailed(error: ServiceError): GetExistingFailAction {
   return { type: GET_EXISTING_FAIL, error: error.message };
 }
 
+//**************UpdateRepField************
+const UPDATE_REP_FIELD = 'iSupport/incidentSettings/UPDATE_REP_FIELD';
+type UpdateRepFieldAction = { type: "iSupport/incidentSettings/UPDATE_REP_FIELD", request: UpdateRepFieldRequest }
+
+export function updateRepField(request: UpdateRepFieldRequest): UpdateRepFieldAction {
+  return { type: UPDATE_REP_FIELD, request: request };
+}
+
+//**************ActionType************
 type Action = InitAction | GetStatusesAction | GetStatusesSuccessAction | GetStatusesFailAction
  | InitNewAction | InitNewSuccessAction | InitNewFailAction
- | GetExistingAction | GetExistingSuccessAction | GetExistingFailAction;
+ | GetExistingAction | GetExistingSuccessAction | GetExistingFailAction
+ | UpdateRepFieldAction;
 
 export default function reducer(state:IncidentSettingsState = initialState, action:Action) : IncidentSettingsState | loop {
   let newState:IncidentSettingsState;
   const propertyNames = new IncidentStatusPropertyNames();
 
   switch (action.type) {
+    case UPDATE_REP_FIELD:
+      let newIncident = Object.assign({}, state.incident);
+      newIncident[action.request.field] = action.request.rep;
+
+      newState = Object.assign({}, state, {
+        incident: newIncident
+      });
+
+      return newState;
     case INIT:
 
     return loop(

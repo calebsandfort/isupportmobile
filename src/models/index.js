@@ -10,6 +10,7 @@ export { GetResponse as GetResponse } from './common';
 export { CountResponse as CountResponse } from './common';
 export { WorkItemTypes as WorkItemTypes } from './common';
 export { LoadSpanType as LoadSpanType } from './common';
+export { UpdateRepFieldRequest as UpdateRepFieldRequest } from './common';
 
 export { EntityQuery as EntityQuery } from './entityQuery';
 export { SearchFilter as SearchFilter } from './entityQuery';

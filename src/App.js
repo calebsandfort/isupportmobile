@@ -8,6 +8,7 @@ import BlankPage from "./container/BlankPageContainer";
 import Sidebar from "./container/SidebarContainer";
 import IncidentPage from "./container/Incident/Form";
 import WorkItemList from './container/WorkItemListContainer';
+import RepList from './container/Modals/RepListContainer';
 
 const Drawer = DrawerNavigator(
 	{
@@ -30,6 +31,14 @@ const AppStack = StackNavigator({
 	}
 );
 
+const ModalsStack = StackNavigator({
+		RepList: { screen: RepList },
+	},
+	{
+		headerMode: "none",
+	}
+);
+
 const AuthStack = StackNavigator({
 		Login: { screen: Login }
 	},
@@ -42,6 +51,7 @@ const AuthStack = StackNavigator({
 const App = StackNavigator(
 	{
 		AppStack: { screen: AppStack },
+		RepList: { screen: RepList },
 		AuthStack: { screen: AuthStack }
 	},
 	{

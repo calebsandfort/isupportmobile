@@ -3,6 +3,7 @@ import * as React from "react";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import { Item, Input, Icon, Toast, Form, Picker, Label } from "native-base";
+import { Col, Row, Grid } from "react-native-easy-grid";
 import * as fieldRenderers from '../../../utilities/fieldRenderers';
 import { Field, reduxForm, formValueSelector } from "redux-form";
 import * as incidentSettingsActions from "../../../redux/modules/incidentSettings";
@@ -21,12 +22,12 @@ export interface State {}
 class IncidentForm extends React.Component<Props, State> {
   textInput: any;
 	submit: Function;
-	assigneeClick: Function;
+	repClick: Function;
 
 	constructor(props, context) {
     super(props, context);
     this.submit = this.submit.bind(this);
-    this.assigneeClick = this.assigneeClick.bind(this);
+    this.repClick = this.repClick.bind(this);
   }
 
 	componentDidMount() {
@@ -60,8 +61,10 @@ class IncidentForm extends React.Component<Props, State> {
     // }
   }
 
-	assigneeClick() {
-		alert("assigneeClick");
+	repClick(field: string) {
+		this.props.navigation.navigate("RepList", {
+			field: field
+		});
 	}
 
   render() {
@@ -78,18 +81,24 @@ class IncidentForm extends React.Component<Props, State> {
 					label="Created"
 					format={fieldRenderers.dateFormatter}
 				/>
-				<Field name="status.idString" mode="dropdown" component={fieldRenderers.renderSelect} style={{left: 10}} label="Status" >
-					{this.props.incidentSettings.statuses.map((status) =>
-	          <Picker.Item key={status.idString} label={status.label} value={status.idString} />
-	        )}
-        </Field>
+				<Grid style={{left: 15, alignItems: 'center'}}>
+			    <Col style={{ width: 129 }}><Label style={{color: '#575757'}}>Status</Label></Col>
+			    <Col>
+						<Field name="status.idString" mode="dropdown" component={fieldRenderers.renderSelect} label="Status" >
+							{this.props.incidentSettings.statuses.map((status) =>
+			          <Picker.Item key={status.idString} label={status.label} value={status.idString} />
+			        )}
+		        </Field>
+				</Col>
+				</Grid>
+
 				<Item />
 				<Field
 					name="assignee.displayName"
 					component={fieldRenderers.renderReadonlyInput}
 					label="Assignee"
 					icon="person"
-					iconClick={() => this.assigneeClick()}
+					iconClick={() => this.repClick('assignee')}
 				/>
 			</Form>
 		);
@@ -103,7 +112,8 @@ class IncidentForm extends React.Component<Props, State> {
 }
 const IncidentContainer = reduxForm({
   form: "incident",
-	enableReinitialize: true
+	enableReinitialize: true,
+	keepDirtyOnReinitialize: true
 })(IncidentForm);
 
 function bindAction(dispatch) {

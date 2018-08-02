@@ -1825,3 +1825,8 @@ export type GetResponse = {
   item: EntityFlowType,
   controller: WorkItemTypes
 }
+
+export type UpdateRepFieldRequest = {
+  field: string,
+  rep: SupportRepresentative
+}

@@ -73,3 +73,6 @@ declare module "moment" {
 declare module "redux-persist-expo-securestore" {
   declare module.exports: any;
 }
+declare module "react-native-easy-grid" {
+  declare module.exports: any;
+}

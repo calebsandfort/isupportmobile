@@ -21,7 +21,7 @@ import {IncidentStatusTypes} from '../../models/Entities/Enums';
 import moment from 'moment';
 
 describe('iSupport Service', () => {
-  let access_token = '5053oty_LCijVsQXccqQOGz7k5TGvXj6fI0HdM5XG4v87z7tM-qDocdGG8lvRCA2P5RtIKSlp0rXn4XHPxT5SHrwzFK6LKokOpzdqr8BVoOXapuRSR0tsxJ8Jjb9ASJhpt6tMbNV-XDCAx2x1-BAZ4TfVt3kwQM-iRBXj-vQVY1Hz-iBDIa5m9mBsxxIl5oIGEx8DOAOb_oCPYrtOG_uXGrtF7yGQNIhZbDesHw_-jFnNqnrcPAIcyZpsltbFBK46qCPJ85Vpzf0JACzFgjd4cxO4Ejkc0vUorULPiUxJeF_33g6TLKMEEEZpnC-nDQUYtXfpNXjZ1WZzpub3J0G_ZLcS-A5SAPS-GqeTzjPntg';
+  let access_token = 'z0NAUvIHBpWGyH0N1zfrC-uOU9JVhPIL_HYz1WiDlPRFiaY866l5K7pMcGc7jd90zalieOQbcRKj6TMb97SFUDMuEzV5gUQkHeY1oH_q5uu-dpZb7zPYqZf_HMpT6V67lXo6CzAdjiQ6cbZlvjmhvU3Z9v0rxxfKw4ZdcMIpTkFQshdhvEfsQV-rSM50HGdmBYZq5-BSpn3BXRAR-xfOuC2JdjFtE57mcYYDhxhBxvoVrajg-JzbhCXJ8FSS6qdwUJK_xyIumcBkzGleqM-tOJ7sT18vVWGaOy6dY67fE1-o0HZ3F9jOJ1HfSFivFF-k0-onxQwzkxINpYxXmq06Y_AkafwhBWgIjCqOVpz4N0w';
   const rep = {Identifier: 12};
 
   // describe('tokenFlow', () => {
